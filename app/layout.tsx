@@ -2,13 +2,12 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { siteConfig } from "./metadata"
 import "./globals.css"
-import type React from "react" // Import React
-// Ensure the ThemeProvider is properly set up in the root layout
+import type React from "react"
 import { ThemeProvider } from "@/components/theme-provider"
-// Import the LanguageProvider and translations
 import { LanguageProvider } from "@/contexts/language-context"
 import { translations } from "@/translations"
 import { Footer } from "@/components/footer"
+import { NewsletterPopupProvider } from "@/components/newsletter-popup-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -79,7 +78,6 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-// Update the RootLayout component to include LanguageProvider
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -87,12 +85,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <LanguageProvider translations={translations}>
-            {children}
-            <Footer />
+            <NewsletterPopupProvider>
+              {children}
+              <Footer />
+            </NewsletterPopupProvider>
           </LanguageProvider>
         </ThemeProvider>
 
-        {/* Enhanced Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
