@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 72.2% 50.6%;
+
+    --radius: 0.3rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 72.2% 50.6%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: animate-in 0.2s ease-in-out;
+  }
+
+  .cyberpunk-border {
+    @apply relative overflow-hidden;
+    &::before {
+      content: "";
+      @apply absolute inset-0 border-2 border-red-500/50;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    }
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 10px theme("colors.red.500"), 0 0 20px theme("colors.red.500"), 0 0 30px theme("colors.red.500");
+  }
+
+  .circuit-pattern {
+    background-image: linear-gradient(to right, theme("colors.red.500/0.05") 1px, transparent 1px),
+      linear-gradient(to bottom, theme("colors.red.500/0.05") 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(135deg, theme("colors.red.900/0.1"), transparent 50%);
+  }
+
+  .cyber-text {
+    text-shadow: none;
+    color: white;
+  }
+
+  .glitch {
+    position: relative;
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  @keyframes glitch-effect {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+    &:hover {
+      @apply neon-glow;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.5));
+    }
+    50% {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.7));
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Staggered animations for children */
+  .stagger-children > *:nth-child(1) {
+    animation-delay: 100ms;
+  }
+  .stagger-children > *:nth-child(2) {
+    animation-delay: 200ms;
+  }
+  .stagger-children > *:nth-child(3) {
+    animation-delay: 300ms;
+  }
+  .stagger-children > *:nth-child(4) {
+    animation-delay: 400ms;
+  }
+  .stagger-children > *:nth-child(5) {
+    animation-delay: 500ms;
+  }
+  .stagger-children > *:nth-child(6) {
+    animation-delay: 600ms;
+  }
+  .stagger-children > *:nth-child(7) {
+    animation-delay: 700ms;
+  }
+  .stagger-children > *:nth-child(8) {
+    animation-delay: 800ms;
+  }
+  .stagger-children > *:nth-child(9) {
+    animation-delay: 900ms;
+  }
+  .stagger-children > *:nth-child(10) {
+    animation-delay: 1000ms;
+  }
+
+  /* Interactive hover effects */
+  .scale-on-hover {
+    transition: transform 0.3s ease;
+  }
+
+  .scale-on-hover:hover {
+    transform: scale(1.05);
+  }
+
+  /* Enhance cyberpunk elements */
+  .cyber-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .cyber-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(239, 68, 68, 0) 80%, rgba(239, 68, 68, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cyber-card:hover::after {
+    opacity: 1;
+  }
+}
