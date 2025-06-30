@@ -94,23 +94,53 @@ const HiringClientPage = () => {
       type: "Research",
       location: "Palo Alto, CA",
       priority: "Critical",
-      description: "Lead groundbreaking research in autonomous agent development and multi-agent coordination systems."
+      description: "Lead groundbreaking research in autonomous agent development and multi-agent coordination systems.",
+      requirements: ["PhD in CS/AI/ML", "Published research", "Multi-agent systems experience"]
+    },
+    {
+      title: "Agent Engineer",
+      icon: Code,
+      type: "Engineering",
+      location: "Palo Alto, CA",
+      priority: "Critical",
+      description: "Build and optimize autonomous agents, implement advanced coordination protocols, and scale multi-agent systems.",
+      requirements: ["Strong Python/TypeScript", "Distributed systems", "ML/AI experience"]
+    },
+    {
+      title: "Rust Engineer",
+      icon: Server,
+      type: "Engineering",
+      location: "Palo Alto, CA",
+      priority: "High",
+      description: "Develop high-performance, memory-safe infrastructure for agent communication and coordination systems.",
+      requirements: ["Expert Rust skills", "Systems programming", "Performance optimization"]
+    },
+    {
+      title: "DevReal Lead",
+      icon: Rocket,
+      type: "Engineering",
+      location: "Palo Alto, CA",
+      priority: "Critical",
+      description: "Lead the development of DevReal platform - our revolutionary agent development and deployment infrastructure.",
+      requirements: ["Full-stack expertise", "Platform architecture", "Team leadership"]
     },
     {
       title: "Infrastructure Engineer",
       icon: Server,
       type: "Engineering",
       location: "Palo Alto, CA",
-      priority: "Critical",
-      description: "Build and scale computational infrastructure powering multi-agent research and deployment."
+      priority: "High",
+      description: "Build and scale computational infrastructure powering multi-agent research and deployment.",
+      requirements: ["Cloud infrastructure", "Distributed systems", "DevOps experience"]
     },
     {
       title: "Research Intern",
       icon: GraduationCap,
       type: "Internship",
       location: "Bay Area",
-      priority: "High",
-      description: "Exceptional students working on ambitious multi-agent research with senior mentorship."
+      priority: "Medium",
+      description: "Exceptional students working on ambitious multi-agent research with senior mentorship.",
+      requirements: ["Strong academic record", "Programming skills", "Research interest"]
     }
   ];
 
@@ -283,41 +313,80 @@ const HiringClientPage = () => {
             </p>
           </div>
           
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {positions.map((position, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-red-950/10 to-black border border-red-500/20 rounded-2xl p-8 hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10"
+                className="group relative bg-gradient-to-br from-red-950/10 to-black border border-red-500/20 rounded-2xl p-8 hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 overflow-hidden"
               >
-                <div className="flex flex-col lg:flex-row items-start gap-6">
-                  <div className="flex items-center gap-6">
-                    <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl group-hover:bg-red-500/20 transition-colors">
-                      <position.icon className="w-8 h-8 text-red-400" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-2xl font-bold">{position.title}</h3>
-                        {position.priority === "Critical" && (
-                          <span className="px-3 py-1 bg-red-500/20 text-red-300 border border-red-500/30 rounded-full text-sm font-medium">
-                            Critical
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-wrap gap-4 text-gray-400">
-                        <span className="flex items-center gap-1">
-                          <Target className="w-4 h-4" />
-                          {position.type}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {position.location}
-                        </span>
-                      </div>
-                    </div>
+                {/* Priority Badge */}
+                <div className="absolute top-4 right-4">
+                  {position.priority === "Critical" && (
+                    <span className="px-3 py-1 bg-red-500/20 text-red-300 border border-red-500/30 rounded-full text-sm font-bold animate-pulse">
+                      Critical
+                    </span>
+                  )}
+                  {position.priority === "High" && (
+                    <span className="px-3 py-1 bg-orange-500/20 text-orange-300 border border-orange-500/30 rounded-full text-sm font-bold">
+                      High Priority
+                    </span>
+                  )}
+                  {position.priority === "Medium" && (
+                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-sm font-bold">
+                      Medium Priority
+                    </span>
+                  )}
+                </div>
+
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl group-hover:bg-red-500/20 transition-colors flex-shrink-0">
+                    <position.icon className="w-8 h-8 text-red-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-gray-300 text-lg leading-relaxed">{position.description}</p>
+                    <h3 className="text-2xl font-bold mb-2 text-white">{position.title}</h3>
+                    <div className="flex flex-wrap gap-4 text-gray-400 text-sm">
+                      <span className="flex items-center gap-1">
+                        <Target className="w-4 h-4" />
+                        {position.type}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        {position.location}
+                      </span>
+                    </div>
                   </div>
+                </div>
+
+                {/* Description */}
+                <div className="mb-6">
+                  <p className="text-gray-300 text-lg leading-relaxed">{position.description}</p>
+                </div>
+
+                {/* Requirements */}
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-red-400" />
+                    Key Requirements
+                  </h4>
+                  <div className="space-y-2">
+                    {position.requirements.map((req, reqIndex) => (
+                      <div key={reqIndex} className="flex items-center gap-2 text-gray-400 text-sm">
+                        <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
+                        <span>{req}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Apply Button */}
+                <div className="flex justify-end">
+                  <button className="group/btn bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25">
+                    <a href="https://cal.com/swarms" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      Apply Now
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </button>
                 </div>
               </div>
             ))}
