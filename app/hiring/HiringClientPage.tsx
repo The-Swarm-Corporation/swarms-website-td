@@ -166,7 +166,7 @@ const HiringClientPage = () => {
         <div className="relative z-10 text-center max-w-6xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 mb-8 backdrop-blur-sm">
             <Rocket className="w-4 h-4" />
-            <span className="text-sm font-medium">Automate the Global Economy</span>
+            <span className="text-sm font-medium">Let's Automate the Global Economy</span>
           </div>
           
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 bg-gradient-to-r from-white via-red-100 to-red-300 bg-clip-text text-transparent leading-tight tracking-tight">
