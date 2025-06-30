@@ -5,11 +5,7 @@ import { Settings, Network, Cloud, Zap } from "lucide-react"
 import { CardWrapper } from "./card-wrapper"
 import { motion } from "framer-motion"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 export function Features() {
-  const { t } = useLanguage() // Add this line to use the translation function
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -26,18 +22,20 @@ export function Features() {
   }
 
   return (
-    <div className="container py-24">
+    <div className="container py-16 md:py-24 px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center space-y-4 mb-12"
+        className="text-center space-y-4 mb-8 md:mb-12"
       >
-        <h2 id="features-title" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
-          {t("key_capabilities")}
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
+          Enterprise Features
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-[800px]">{t("swarms_provides_everything")}</p>
+        <p className="text-muted-foreground mx-auto max-w-[800px]">
+          Built for scale, security, and reliability in production environments
+        </p>
       </motion.div>
 
       <motion.div

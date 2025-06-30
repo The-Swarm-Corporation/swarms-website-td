@@ -15,9 +15,6 @@ import {
 } from "lucide-react"
 import { motion } from "framer-motion"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 const useCases = [
   {
     icon: LineChart,
@@ -136,8 +133,6 @@ const useCases = [
 ]
 
 export function UseCases() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   return (
     <div className="container py-12 md:py-24 px-4 md:px-6">
       <motion.div
@@ -151,10 +146,10 @@ export function UseCases() {
           id="use-cases-title"
           className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter px-4 text-foreground"
         >
-          {t("industry_use_cases")}
+          Industry Use Cases
         </h2>
         <p className="text-muted-foreground mx-auto max-w-[800px] text-sm md:text-base px-4">
-          {t("discover_how_swarms")}
+          Discover how Swarms transforms industries across the globe
         </p>
       </motion.div>
 

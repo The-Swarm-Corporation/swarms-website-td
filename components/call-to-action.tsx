@@ -5,12 +5,7 @@ import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { TypingEffect } from "./typing-effect"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 export function CallToAction() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   return (
     <div className="container py-24">
       <motion.div
@@ -44,13 +39,13 @@ export function CallToAction() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {t("ready_to")}{" "}
+            Ready to{" "}
             <TypingEffect
               texts={[
-                t("transform_your_ai"),
-                t("scale_agent_systems"),
-                t("solve_complex_problems"),
-                t("build_the_future"),
+                "Transform Your AI",
+                "Scale Agent Systems",
+                "Solve Complex Problems",
+                "Build the Future",
               ]}
               className="text-red-500"
             />
@@ -62,7 +57,7 @@ export function CallToAction() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {t("start_building")}
+            Start building enterprise-grade AI systems with Swarms today
           </motion.p>
           <motion.div
             className="mt-8 flex flex-wrap justify-center gap-4"
@@ -81,7 +76,7 @@ export function CallToAction() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("get_started")}
+                Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
@@ -92,7 +87,7 @@ export function CallToAction() {
               asChild
             >
               <a href="https://docs.swarms.world" target="_blank" rel="noopener noreferrer">
-                {t("view_documentation")}
+                View Documentation
               </a>
             </Button>
           </motion.div>

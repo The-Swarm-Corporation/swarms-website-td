@@ -6,12 +6,7 @@ import { motion } from "framer-motion"
 import { AnimatedBackground } from "./animated-background"
 import { TypingEffect } from "./typing-effect"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 export function Hero() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   return (
     <div className="relative overflow-hidden">
       {/* Enhanced cyberpunk grid background */}
@@ -60,7 +55,7 @@ export function Hero() {
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               <TypingEffect
-                texts={[t("enterprise_multi_agent"), t("orchestrate_agents"), t("scale_systems"), t("build_swarms")]}
+                texts={["Enterprise-Grade Multi-Agent Framework", "Orchestrate Thousands of AI Agents", "Scale Complex AI Systems", "Build Autonomous Agent Swarms"]}
                 typingSpeed={50}
                 deletingSpeed={30}
                 delayBetweenTexts={2000}
@@ -86,7 +81,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 aria-label="Get started with Swarms AI on GitHub"
               >
-                {t("get_started")}
+                Get Started
               </a>
             </Button>
             <Button

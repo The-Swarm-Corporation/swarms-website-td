@@ -15,9 +15,6 @@ import {
 } from "lucide-react"
 import { motion } from "framer-motion"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 const features = [
   {
     icon: Building2,
@@ -98,10 +95,8 @@ const features = [
 ]
 
 export function FeaturesGrid() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   return (
-    <div className="container py-12 md:py-24 px-4 md:px-6">
+    <div className="container py-16 md:py-24 px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -109,11 +104,11 @@ export function FeaturesGrid() {
         viewport={{ once: true }}
         className="text-center space-y-4 mb-8 md:mb-12"
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter px-4 text-foreground">
-          {t("comprehensive_feature_set")}
+        <h2 id="features-grid-title" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
+          Key Capabilities
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-[800px] text-sm md:text-base px-4">
-          {t("everything_you_need")}
+        <p className="text-muted-foreground mx-auto max-w-[800px]">
+          Swarms provides everything you need to build, deploy, and scale autonomous AI agent systems
         </p>
       </motion.div>
       <motion.div

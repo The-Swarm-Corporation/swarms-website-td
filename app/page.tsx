@@ -16,12 +16,7 @@ import { ScrollingTicker } from "@/components/scrolling-ticker"
 import { Problem } from "@/components/problem"
 import { Solution } from "@/components/solution"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 export default function Home() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   // Structured multilingual slogans for the ticker
   // Following the pattern: English -> Chinese -> Japanese
   const tickerAnnouncements = [
@@ -76,9 +71,6 @@ export default function Home() {
           <section aria-labelledby="solution-title" role="region">
             <Solution />
           </section>
-          <section aria-labelledby="features-title" role="region">
-            <Features />
-          </section>
           <section aria-labelledby="use-cases-title" role="region">
             <UseCases />
           </section>
@@ -103,7 +95,7 @@ export default function Home() {
       <footer className="py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            {t("built_by")}{" "}
+            Built by{" "}
             <a
               href={siteConfig.url}
               target="_blank"
@@ -112,7 +104,7 @@ export default function Home() {
             >
               Swarms AI
             </a>
-            . {t("source_code")}{" "}
+            . Source code available on{" "}
             <a
               href={siteConfig.links.github}
               target="_blank"

@@ -7,12 +7,7 @@ import { CardWrapper } from "./card-wrapper"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { motion } from "framer-motion"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 export function Cloud() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   return (
     <div className="container py-24">
       <motion.div
@@ -23,9 +18,9 @@ export function Cloud() {
         className="text-center space-y-4 mb-12"
       >
         <h2 id="cloud-title" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
-          {t("swarms_cloud_api")}
+          Swarms Cloud API
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-[800px]">{t("deploy_and_manage")}</p>
+        <p className="text-muted-foreground mx-auto max-w-[800px]">Deploy and manage your agent swarms in the cloud with enterprise-grade infrastructure</p>
       </motion.div>
 
       <motion.div
@@ -195,7 +190,7 @@ body: JSON.stringify(payload)
       <div className="mt-12 text-center">
         <Button size="lg" className="bg-red-600 hover:bg-red-700" asChild>
           <a href="https://cloud.swarms.ai" target="_blank" rel="noopener noreferrer">
-            {t("try_swarms_cloud")}
+            Try Swarms Cloud
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>
         </Button>

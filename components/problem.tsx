@@ -3,12 +3,8 @@
 import { motion } from "framer-motion"
 import { CardWrapper } from "./card-wrapper"
 import { AlertTriangle, BrainCircuit, Clock, Target, Lock, Coins, Database, Zap } from "lucide-react"
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
 
 export function Problem() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   return (
     <div className="container py-16 md:py-24 px-4 sm:px-6">
       <motion.div
@@ -19,9 +15,9 @@ export function Problem() {
         className="text-center space-y-4 mb-8 md:mb-12"
       >
         <h2 id="problem-title" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
-          {t("enterprise_ai_problem")}
+          The Enterprise AI Problem
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-[800px]">{t("individual_agents_insufficient")}</p>
+        <p className="text-muted-foreground mx-auto max-w-[800px]">Individual AI agents are insufficient for enterprise-grade applications</p>
       </motion.div>
 
       <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

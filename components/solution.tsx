@@ -5,12 +5,7 @@ import { CardWrapper } from "./card-wrapper"
 import { CheckCircle2, BrainCircuit, Clock, Target, ArrowRight, Lock, Coins, Database, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 export function Solution() {
-  const { t } = useLanguage() // Add this line to use the translation function
-
   return (
     <div className="container py-16 md:py-24 px-4 sm:px-6 relative">
       {/* Background elements */}
@@ -33,9 +28,9 @@ export function Solution() {
         className="text-center space-y-4 mb-8 md:mb-12 relative z-10"
       >
         <h2 id="solution-title" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
-          {t("swarms_solution")}
+          The Swarms Solution
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-[800px]">{t("multi_agent_improves")}</p>
+        <p className="text-muted-foreground mx-auto max-w-[800px]">Multi-agent collaboration dramatically improves AI capabilities for enterprise applications</p>
       </motion.div>
 
       <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 relative z-10">
@@ -164,7 +159,7 @@ export function Solution() {
           asChild
         >
           <a href="https://docs.swarms.world" target="_blank" rel="noopener noreferrer">
-            {t("learn_how_swarms_work")}
+            Learn How Swarms Work
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>
         </Button>

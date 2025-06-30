@@ -1,4 +1,5 @@
-import { HiringClientPage } from "./HiringClientPage"
+import HiringClientPage from "./HiringClientPage"
+import { Navigation } from "@/components/navigation"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -25,5 +26,10 @@ export const metadata: Metadata = {
 }
 
 export default function HiringPage() {
-  return <HiringClientPage />
+  return (
+    <>
+      <Navigation />
+      <HiringClientPage />
+    </>
+  )
 }

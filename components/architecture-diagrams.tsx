@@ -7,11 +7,7 @@ import { ArrowRight } from "lucide-react"
 import Mermaid from "react-mermaid2"
 import { motion } from "framer-motion"
 
-// Import the useLanguage hook
-import { useLanguage } from "@/contexts/language-context"
-
 export function ArchitectureDiagrams() {
-  const { t } = useLanguage() // Add this line to use the translation function
   const mermaidConfig = {
     theme: "base",
     themeVariables: {
@@ -95,21 +91,20 @@ result = mixture.run("Solve complex problem")`,
   }
 
   return (
-    <div className="container py-24">
+    <div className="container py-16 md:py-24 px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center space-y-4 mb-12"
+        className="text-center space-y-4 mb-8 md:mb-12"
       >
-        <h2
-          id="architecture-title"
-          className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground"
-        >
-          {t("swarm_architectures")}
+        <h2 id="architecture-title" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
+          Architecture Overview
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-[800px]">{t("choose_from_multiple")}</p>
+        <p className="text-muted-foreground mx-auto max-w-[800px]">
+          Understand how Swarms orchestrates multiple agents to solve complex problems
+        </p>
       </motion.div>
 
       <Tabs defaultValue="sequential" className="relative">

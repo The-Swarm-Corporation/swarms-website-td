@@ -4,8 +4,6 @@ import { siteConfig } from "./metadata"
 import "./globals.css"
 import type React from "react"
 import { ThemeProvider } from "@/components/theme-provider"
-import { LanguageProvider } from "@/contexts/language-context"
-import { translations } from "@/translations"
 import { Footer } from "@/components/footer"
 import { NewsletterPopupProvider } from "@/components/newsletter-popup-provider"
 import { Analytics } from "@vercel/analytics/next"
@@ -85,12 +83,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <LanguageProvider translations={translations}>
-            <NewsletterPopupProvider>
-              {children}
-              <Footer />
-            </NewsletterPopupProvider>
-          </LanguageProvider>
+          <NewsletterPopupProvider>
+            {children}
+            <Footer />
+          </NewsletterPopupProvider>
         </ThemeProvider>
 
         <Analytics />

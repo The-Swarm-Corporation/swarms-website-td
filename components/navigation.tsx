@@ -35,17 +35,12 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-// Import the LanguageSwitcher and useLanguage hook
-import { LanguageSwitcher } from "@/components/language-switcher"
-import { useLanguage } from "@/contexts/language-context"
-
 // Import the EasterNotification component at the top with other imports
 import { EasterNotification } from "@/components/easter-notification"
 
 export function Navigation() {
   const { setTheme, theme } = useTheme()
   const [isOpen, setIsOpen] = React.useState(false)
-  const { t } = useLanguage() // Add this line to use the translation function
   const [activeTab, setActiveTab] = React.useState("ecosystem")
   
   // Add hover state management for dropdowns
@@ -135,7 +130,7 @@ export function Navigation() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex lg:space-x-4 xl:space-x-6">
           <NavLink href="https://docs.swarms.world" external>
-            {t("docs")}
+            Docs
           </NavLink>
           
           {/* Products Dropdown */}
@@ -145,7 +140,7 @@ export function Navigation() {
             onMouseLeave={() => setHoveredDropdown(null)}
           >
             <button className="flex items-center text-sm font-medium transition-all duration-300 hover:text-red-500 border border-transparent hover:border-red-500/30 px-3 py-1.5 rounded-md hover:bg-red-500/5">
-              {t("products")}
+              Products
               <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${hoveredDropdown === "products" ? "rotate-180" : ""}`} />
             </button>
             
@@ -212,7 +207,7 @@ export function Navigation() {
             onMouseLeave={() => setHoveredDropdown(null)}
           >
             <button className="flex items-center text-sm font-medium transition-all duration-300 hover:text-red-500 border border-transparent hover:border-red-500/30 px-3 py-1.5 rounded-md hover:bg-red-500/5">
-              {t("programs")}
+              Programs
               <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${hoveredDropdown === "programs" ? "rotate-180" : ""}`} />
             </button>
             
@@ -262,7 +257,7 @@ export function Navigation() {
             onMouseLeave={() => setHoveredDropdown(null)}
           >
             <button className="flex items-center text-sm font-medium transition-all duration-300 hover:text-red-500 border border-transparent hover:border-red-500/30 px-3 py-1.5 rounded-md hover:bg-red-500/5 group">
-              <span className="group-hover:text-shadow-glow">{t("resources")}</span>
+              <span className="group-hover:text-shadow-glow">Resources</span>
               <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${hoveredDropdown === "resources" ? "rotate-180" : ""}`} />
             </button>
             
@@ -399,7 +394,7 @@ export function Navigation() {
             asChild
           >
             <a href="https://swarms.world" target="_blank" rel="noopener noreferrer">
-              {t("marketplace")}
+              Marketplace
             </a>
           </Button>
 
@@ -421,9 +416,6 @@ export function Navigation() {
           {/* Social Links */}
           <SocialButton href="https://x.com/swarms_corp" icon={Twitter} label="Follow us on Twitter" />
           <SocialButton href="https://discord.gg/jM3Z6M9uMq" icon={Discord} label="Join our Discord" />
-
-          {/* Language Switcher */}
-          <LanguageSwitcher />
 
           <Button
             variant="ghost"
@@ -465,11 +457,11 @@ export function Navigation() {
                   className="text-sm font-medium hover:text-red-500 transition-all duration-300 hover:bg-red-500/10 p-3 rounded-md border border-transparent hover:border-red-500/30 hover:shadow-[0_0_8px_rgba(239,68,68,0.2)]"
                   onClick={() => setIsOpen(false)}
                 >
-                  {t("docs")}
+                  Docs
                 </Link>
                 <div className="space-y-3">
                   <div className="text-sm font-medium px-3 flex items-center">
-                    <span>{t("products")}</span>
+                    <span>Products</span>
                     <div className="ml-2 h-px flex-1 bg-gradient-to-r from-red-500/30 to-transparent"></div>
                   </div>
                   <Link
@@ -515,7 +507,7 @@ export function Navigation() {
                 </div>
                 <div className="space-y-3">
                   <div className="text-sm font-medium px-3 flex items-center">
-                    <span>{t("programs")}</span>
+                    <span>Programs</span>
                     <div className="ml-2 h-px flex-1 bg-gradient-to-r from-red-500/30 to-transparent"></div>
                   </div>
                   <Link
@@ -549,7 +541,7 @@ export function Navigation() {
                   className="text-sm font-medium hover:text-red-500 transition-all duration-300 hover:bg-red-500/10 p-3 rounded-md border border-transparent hover:border-red-500/30 hover:shadow-[0_0_8px_rgba(239,68,68,0.2)]"
                   onClick={() => setIsOpen(false)}
                 >
-                  {t("marketplace")}
+                  Marketplace
                 </Link>
 
                 <Link
@@ -563,7 +555,7 @@ export function Navigation() {
                 {/* Mobile Resources Section with Tabs */}
                 <div className="space-y-3">
                   <div className="text-sm font-medium px-3 flex items-center">
-                    <span>{t("resources")}</span>
+                    <span>Resources</span>
                     <div className="ml-2 h-px flex-1 bg-gradient-to-r from-red-500/30 to-transparent"></div>
                   </div>
 
@@ -756,7 +748,7 @@ export function Navigation() {
                   </div>
                   {/* Add Language Switcher to mobile menu */}
                   <div className="flex justify-center">
-                    <LanguageSwitcher />
+                    {/* Language switcher removed */}
                   </div>
                 </div>
               </div>
