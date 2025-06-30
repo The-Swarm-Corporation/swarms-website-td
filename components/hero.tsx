@@ -110,7 +110,7 @@ export function Hero() {
                 className="flex items-center space-x-2"
               >
                 <Zap className="h-5 w-5" />
-                <span>GET STARTED</span>
+                <span>Get Started</span>
                 <ArrowRight className="h-5 w-5" />
               </a>
             </Button>
