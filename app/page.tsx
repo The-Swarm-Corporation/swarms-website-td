@@ -4,57 +4,44 @@ import { Features } from "@/components/features"
 import { FeaturesGrid } from "@/components/features-grid"
 import { Hero } from "@/components/hero"
 import { Navigation } from "@/components/navigation"
-import { Stats } from "@/components/stats"
-import { Community } from "@/components/community"
 import { CallToAction } from "@/components/call-to-action"
-import { Ecosystem } from "@/components/ecosystem"
-import { UseCases } from "@/components/use-cases"
-import { ArchitectureDiagrams } from "@/components/architecture-diagrams"
-import { Cloud } from "@/components/cloud"
-import { siteConfig } from "./metadata"
 import { ScrollingTicker } from "@/components/scrolling-ticker"
-import { Problem } from "@/components/problem"
-import { Solution } from "@/components/solution"
+import { Marketplace } from "@/components/marketplace"
+import { Community } from "@/components/community"
 
 export default function Home() {
-  // Structured multilingual slogans for the ticker
-  // Following the pattern: English -> Chinese -> Japanese
+  // Updated ticker announcements with the new messaging
   const tickerAnnouncements = [
-    // Slogan 1: Transform your Organization with Agents
-    "Transform your Organization with Agents",
-    "通过智能体转变您的组织",
-    "エージェントで組織を変革する",
+    // Core benefits
+    "BUILD MULTI-AGENT STRUCTURES",
+    "构建多智能体结构",
+    "マルチエージェント構造を構築",
 
-    // Slogan 2: Automate Operations with Swarms
-    "Automate Operations with Swarms",
-    "使用智能体群自动化运营",
-    "スウォームで業務を自動化",
+    // Deployment
+    "DEPLOY AGENTS INTO PRODUCTION",
+    "将智能体部署到生产环境",
+    "エージェントを本番環境にデプロイ",
 
-    // Slogan 3: Scale AI Systems Beyond Single Agents
-    "Scale AI Systems Beyond Single Agents",
-    "将人工智能系统扩展到单个智能体之外",
-    "単一のエージェントを超えてAIシステムを拡張",
+    // Monitoring
+    "MONITOR & OBSERVE YOUR AGENTS",
+    "监控和观察您的智能体",
+    "エージェントを監視・観察",
 
-    // Slogan 4: Build Enterprise-Grade AI Solutions
-    "Build Enterprise-Grade AI Solutions",
-    "构建企业级人工智能解决方案",
-    "エンタープライズグレードのAIソリューションを構築",
-
-    // Slogan 5: Orchestrate Thousands of Agents in Harmony
-    "Orchestrate Thousands of Agents in Harmony",
-    "协调数千个智能体和谐运行",
-    "数千のエージェントを調和して編成",
+    // Automation
+    "AUTOMATE YOUR ENTERPRISE",
+    "自动化您的企业",
+    "エンタープライズを自動化",
 
     // Product announcement
-    "New Release: Swarms v2.0 is now available",
+    "NEW: Swarms v2.0 - The First Multi-Agent Framework in Rust",
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <Navigation />
       <ScrollingTicker
         announcements={tickerAnnouncements}
-        className="py-2 bg-black/30 border-y border-red-600/20 backdrop-blur-sm"
+        className="py-3 bg-black/80 border-y border-red-600/30 backdrop-blur-sm"
       />
       <main id="main-content" role="main">
         <div className="sr-only">
@@ -64,52 +51,39 @@ export default function Home() {
 
         <Hero />
         <article>
-          <Stats aria-label="Platform Statistics" />
-          <section aria-labelledby="problem-title" role="region">
-            <Problem />
+          <section aria-labelledby="benefits-title" role="region">
+            <Features />
           </section>
-          <section aria-labelledby="solution-title" role="region">
-            <Solution />
-          </section>
-          <section aria-labelledby="use-cases-title" role="region">
-            <UseCases />
-          </section>
-          <section aria-labelledby="features-grid-title" role="region">
+          <section aria-labelledby="swarms-stack-title" role="region">
             <FeaturesGrid />
           </section>
-          <section aria-labelledby="architecture-title" role="region">
-            <ArchitectureDiagrams />
-          </section>
-          <section aria-labelledby="cloud-title" role="region">
-            <Cloud />
-          </section>
-          <section aria-labelledby="ecosystem-title" role="region">
-            <Ecosystem />
-          </section>
-          <section aria-labelledby="community-title" role="region">
+          {/* <section aria-labelledby="marketplace-title" role="region">
+            <Marketplace />
+          </section> */}
+          {/* <section aria-labelledby="community-title" role="region">
             <Community />
-          </section>
+          </section> */}
         </article>
         <CallToAction />
       </main>
-      <footer className="py-6 md:py-0">
+      <footer className="py-8 md:py-12 bg-black border-t border-red-500/20">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+          <p className="text-center text-sm leading-loose text-gray-400 md:text-left">
             Built by{" "}
             <a
-              href={siteConfig.url}
+              href="https://swarms.ai"
               target="_blank"
               rel="noreferrer"
-              className="font-medium underline underline-offset-4"
+              className="font-medium text-red-400 hover:text-red-300 underline underline-offset-4 transition-colors"
             >
               Swarms AI
             </a>
             . Source code available on{" "}
             <a
-              href={siteConfig.links.github}
+              href="https://github.com/kyegomez/swarms"
               target="_blank"
               rel="noreferrer"
-              className="font-medium underline underline-offset-4"
+              className="font-medium text-red-400 hover:text-red-300 underline underline-offset-4 transition-colors"
             >
               GitHub
             </a>

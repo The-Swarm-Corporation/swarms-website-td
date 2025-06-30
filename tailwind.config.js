@@ -11,6 +11,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        'orbitron': ['Orbitron', 'monospace'],
+        'orbitron-bold': ['Orbitron', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
