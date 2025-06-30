@@ -8,6 +8,7 @@ import { LanguageProvider } from "@/contexts/language-context"
 import { translations } from "@/translations"
 import { Footer } from "@/components/footer"
 import { NewsletterPopupProvider } from "@/components/newsletter-popup-provider"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 interface RootLayoutProps {
@@ -91,6 +92,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </NewsletterPopupProvider>
           </LanguageProvider>
         </ThemeProvider>
+
+        <Analytics />
 
         <script
           type="application/ld+json"
