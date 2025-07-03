@@ -6,9 +6,6 @@ import { Hero } from "@/components/hero"
 import { Navigation } from "@/components/navigation"
 import { CallToAction } from "@/components/call-to-action"
 import { ScrollingTicker } from "@/components/scrolling-ticker"
-import { Marketplace } from "@/components/marketplace"
-import { Community } from "@/components/community"
-
 export default function Home() {
   // Updated ticker announcements with the new messaging
   const tickerAnnouncements = [

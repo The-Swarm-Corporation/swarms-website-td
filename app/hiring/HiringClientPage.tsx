@@ -41,26 +41,59 @@ const HiringClientPage = () => {
     {
       icon: Brain,
       title: "Multi-Agent Lab",
-      description: "World's first research lab focused on agent collaboration",
+      description: "World's first research lab focused on agent collaboration and autonomous systems",
       gradient: "from-red-500/20 to-pink-500/20"
     },
     {
       icon: Network,
-      title: "Agent Networks",
-      description: "Developing sophisticated communication protocols",
+      title: "Autonomous Corporations",
+      description: "Building fully autonomous corporations that operate 24/7 with perfect coordination",
       gradient: "from-red-400/20 to-orange-500/20"
     },
     {
       icon: Server,
       title: "Industry Simulation",
-      description: "Digital twins of entire industries through agents",
+      description: "Digital twins of entire industries through advanced agent networks",
       gradient: "from-red-600/20 to-red-400/20"
     },
     {
       icon: Globe,
       title: "Civilization Scale",
-      description: "Simulating complex societies and civilizations",
+      description: "Simulating and optimizing complex societies through autonomous systems",
       gradient: "from-pink-500/20 to-red-500/20"
+    }
+  ];
+
+  const values = [
+    {
+      icon: Users,
+      title: "Humanity First",
+      description: "Every advancement we make is guided by its positive impact on humanity",
+      gradient: "from-blue-500/20 to-red-500/20"
+    },
+    {
+      icon: Target,
+      title: "Intense Focus",
+      description: "Unwavering dedication to solving the most challenging problems in AI",
+      gradient: "from-purple-500/20 to-red-500/20"
+    },
+    {
+      icon: BookOpen,
+      title: "Research Focused",
+      description: "Pushing the boundaries of what's possible through rigorous research",
+      gradient: "from-red-500/20 to-orange-500/20"
+    },
+    {
+      icon: Zap,
+      title: "Hard Work",
+      description: "Relentless pursuit of excellence and breakthrough solutions",
+      gradient: "from-yellow-500/20 to-red-500/20"
+    },
+    {
+      icon: Star,
+      title: "Creativity",
+      description: "Innovative thinking that transforms theoretical concepts into reality",
+      gradient: "from-green-500/20 to-red-500/20"
     }
   ];
 
@@ -153,71 +186,85 @@ const HiringClientPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-red-500/20 selection:text-red-200">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
-        {/* Animated Background */}
+        {/* Enhanced Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-red-900/10 via-black to-red-900/5" />
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-red-500/5 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-400/3 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute inset-0 bg-gradient-to-br from-red-900/5 via-black to-red-900/10" />
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[100px] animate-pulse-slow" />
+          <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-red-400/3 rounded-full blur-[120px] animate-pulse-slower" />
+          {/* Grid overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black_70%,transparent_110%)]" />
         </div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 mb-8 backdrop-blur-sm">
+          <div 
+            className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 mb-8 backdrop-blur-sm hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default"
+          >
             <Rocket className="w-4 h-4" />
-            <span className="text-sm font-medium">Let's Automate the Global Economy</span>
+            <span className="text-sm font-medium tracking-wide">Let's Automate the Global Economy</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 bg-gradient-to-r from-white via-red-100 to-red-300 bg-clip-text text-transparent leading-tight tracking-tight">
+          <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-black mb-6 bg-gradient-to-r from-white via-red-100 to-red-300 bg-clip-text text-transparent leading-[0.9] tracking-tight">
             Advance
             <br />
             Humanity
           </h1>
           
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 max-w-4xl mx-auto font-light">
-            Join the world's first <span className="text-red-400 font-semibold">multi-agent research lab</span>
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 max-w-4xl mx-auto font-light tracking-wide">
+            Join the world's first <span className="text-red-400 font-medium">multi-agent research lab</span>
           </p>
           
-          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             We're building autonomous agents that collaborate to simulate entire industries and civilizations
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <div className="flex items-center gap-2 text-gray-400">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
               <MapPin className="w-5 h-5 text-red-500" />
-              <span>Palo Alto, CA</span>
+              <span className="font-light tracking-wide">Palo Alto, CA</span>
             </div>
             <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full" />
-            <div className="flex items-center gap-2 text-gray-400">
+            <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
               <Users className="w-5 h-5 text-red-500" />
-              <span>In-Person Collaboration</span>
+              <span className="font-light tracking-wide">In-Person Collaboration</span>
             </div>
           </div>
           
-          <button className="group bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25">
-            <a href="https://cal.com/swarms" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+          <button 
+            className="group relative bg-white text-black px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-500 hover:scale-[1.02] overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+            <a 
+              href="https://cal.com/swarms/1-on-1-team-meeting" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="relative flex items-center gap-3 group-hover:text-white transition-colors duration-500"
+            >
               Start Your Journey
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
             </a>
           </button>
           
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50 hover:opacity-100 transition-opacity duration-300">
             <ChevronDown className="w-6 h-6 text-red-400" />
           </div>
         </div>
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-black to-red-950/5">
+      <section className="py-32 px-4 bg-gradient-to-b from-black to-red-950/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Our Vision
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">The Future We're Building</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Creating autonomous agents that work together to solve humanity's greatest challenges
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+              The Future We're Building
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide">
+              Creating autonomous systems that revolutionize how industries operate and evolve
             </p>
           </div>
           
@@ -225,14 +272,58 @@ const HiringClientPage = () => {
             {visionItems.map((item, index) => (
               <div
                 key={index}
-                className={`group relative p-8 bg-gradient-to-br ${item.gradient} backdrop-blur-sm border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/10`}
+                className="group relative p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 backdrop-blur-sm"
               >
-                <div className="flex flex-col items-center text-center">
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:bg-red-500/20 transition-colors">
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                <div className="relative flex flex-col items-center text-center">
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
                     <item.icon className="w-8 h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-32 px-4 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
+              Our Values
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+              What Drives Us Forward
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide">
+              Our core principles that guide every decision and advancement we make
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="group relative p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 backdrop-blur-sm"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                <div className="relative flex flex-col items-center text-center">
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
+                    <value.icon className="w-8 h-8 text-red-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                    {value.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -241,14 +332,16 @@ const HiringClientPage = () => {
       </section>
 
       {/* Qualities Section */}
-      <section className="py-20 px-4 bg-black">
+      <section className="py-32 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Who We Seek
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Exceptional Individuals</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+              Exceptional Individuals
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide">
               We seek those who combine deep technical expertise with the drive to push boundaries
             </p>
           </div>
@@ -257,14 +350,19 @@ const HiringClientPage = () => {
             {qualities.map((quality, index) => (
               <div
                 key={index}
-                className="group relative p-8 bg-gradient-to-br from-red-950/20 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-105"
+                className="group relative p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm"
               >
-                <div className="flex flex-col items-center text-center">
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                <div className="relative flex flex-col items-center text-center">
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
                     <quality.icon className="w-8 h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{quality.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{quality.description}</p>
+                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                    {quality.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                    {quality.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -273,26 +371,30 @@ const HiringClientPage = () => {
       </section>
 
       {/* Requirements Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-red-950/5 to-black">
+      <section className="py-32 px-4 bg-gradient-to-br from-red-950/5 to-black">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Requirements
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">What It Takes</h2>
-            <p className="text-xl text-gray-400">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+              What It Takes
+            </h2>
+            <p className="text-xl text-gray-400 font-light tracking-wide">
               We maintain exceptionally high standards for complex AI research challenges
             </p>
           </div>
           
-          <div className="bg-gradient-to-br from-red-950/10 to-black border border-red-500/20 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
-            <div className="space-y-6">
+          <div className="bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl p-12 backdrop-blur-sm hover:border-red-500/40 transition-all duration-500">
+            <div className="space-y-8">
               {requirements.map((req, index) => (
-                <div key={index} className="flex items-start gap-4 group">
-                  <div className="p-2 bg-red-500/20 border border-red-500/30 rounded-lg mt-1 group-hover:bg-red-500/30 transition-colors flex-shrink-0">
+                <div key={index} className="flex items-start gap-6 group">
+                  <div className="p-2 bg-red-500/10 border border-red-500/30 rounded-lg mt-1 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500 flex-shrink-0">
                     <CheckCircle className="w-5 h-5 text-red-400" />
                   </div>
-                  <p className="text-lg text-gray-300 leading-relaxed">{req}</p>
+                  <p className="text-lg text-gray-300 leading-relaxed font-light tracking-wide group-hover:text-white transition-colors duration-300">
+                    {req}
+                  </p>
                 </div>
               ))}
             </div>
@@ -301,14 +403,16 @@ const HiringClientPage = () => {
       </section>
 
       {/* Positions Section */}
-      <section className="py-20 px-4 bg-black">
+      <section className="py-32 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Open Positions
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Join Our Mission</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+              Join Our Mission
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide">
               Build the future of autonomous agent technology with us
             </p>
           </div>
@@ -317,40 +421,44 @@ const HiringClientPage = () => {
             {positions.map((position, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-red-950/10 to-black border border-red-500/20 rounded-2xl p-8 hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 overflow-hidden"
+                className="group relative bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl p-8 hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 overflow-hidden"
               >
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
                 {/* Priority Badge */}
                 <div className="absolute top-4 right-4">
                   {position.priority === "Critical" && (
-                    <span className="px-3 py-1 bg-red-500/20 text-red-300 border border-red-500/30 rounded-full text-sm font-bold animate-pulse">
+                    <span className="px-3 py-1 bg-red-500/20 text-red-300 border border-red-500/30 rounded-full text-sm font-medium animate-pulse">
                       Critical
                     </span>
                   )}
                   {position.priority === "High" && (
-                    <span className="px-3 py-1 bg-orange-500/20 text-orange-300 border border-orange-500/30 rounded-full text-sm font-bold">
+                    <span className="px-3 py-1 bg-orange-500/20 text-orange-300 border border-orange-500/30 rounded-full text-sm font-medium">
                       High Priority
                     </span>
                   )}
                   {position.priority === "Medium" && (
-                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-sm font-bold">
+                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-sm font-medium">
                       Medium Priority
                     </span>
                   )}
                 </div>
 
                 {/* Header */}
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl group-hover:bg-red-500/20 transition-colors flex-shrink-0">
+                <div className="relative flex items-start gap-6 mb-8">
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500 flex-shrink-0">
                     <position.icon className="w-8 h-8 text-red-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2 text-white">{position.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                      {position.title}
+                    </h3>
                     <div className="flex flex-wrap gap-4 text-gray-400 text-sm">
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-2 font-light">
                         <Target className="w-4 h-4" />
                         {position.type}
                       </span>
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-2 font-light">
                         <MapPin className="w-4 h-4" />
                         {position.location}
                       </span>
@@ -359,32 +467,42 @@ const HiringClientPage = () => {
                 </div>
 
                 {/* Description */}
-                <div className="mb-6">
-                  <p className="text-gray-300 text-lg leading-relaxed">{position.description}</p>
+                <div className="relative mb-8">
+                  <p className="text-gray-300 text-lg leading-relaxed font-light tracking-wide">
+                    {position.description}
+                  </p>
                 </div>
 
                 {/* Requirements */}
-                <div className="mb-6">
-                  <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                <div className="relative mb-8">
+                  <h4 className="text-white font-medium mb-4 flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-red-400" />
                     Key Requirements
                   </h4>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {position.requirements.map((req, reqIndex) => (
-                      <div key={reqIndex} className="flex items-center gap-2 text-gray-400 text-sm">
-                        <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
-                        <span>{req}</span>
+                      <div key={reqIndex} className="flex items-center gap-3 text-gray-400 text-sm group/req">
+                        <div className="w-1.5 h-1.5 bg-red-400 rounded-full group-hover/req:scale-150 transition-transform duration-300" />
+                        <span className="font-light tracking-wide group-hover/req:text-white transition-colors duration-300">
+                          {req}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Apply Button */}
-                <div className="flex justify-end">
-                  <button className="group/btn bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25">
-                    <a href="https://cal.com/swarms" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <div className="relative flex justify-end">
+                  <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+                    <a 
+                      href="https://cal.com/swarms/1-on-1-team-meeting" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="relative flex items-center justify-center gap-3 group-hover/btn:text-white transition-colors duration-500"
+                    >
                       Apply Now
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-500" />
                     </a>
                   </button>
                 </div>
@@ -395,94 +513,139 @@ const HiringClientPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-red-950/5 to-black">
+      <section className="py-32 px-4 bg-gradient-to-br from-red-950/5 to-black">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               How to Join
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Your Path Forward</h2>
-            <p className="text-xl text-gray-400">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+              Your Path Forward
+            </h2>
+            <p className="text-xl text-gray-400 font-light tracking-wide">
               Our process focuses on practical demonstration over traditional interviews
             </p>
           </div>
           
-          <div className="space-y-8">
-            <div className="flex items-center gap-6 p-8 bg-gradient-to-br from-blue-500/10 to-black border border-blue-500/20 rounded-2xl hover:border-blue-500/40 transition-all duration-300">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 font-bold">
+          <div className="space-y-6">
+            <div className="group flex items-center gap-8 p-8 bg-gradient-to-br from-blue-500/5 to-black border border-blue-500/20 rounded-2xl hover:border-blue-500/40 transition-all duration-500 hover:scale-[1.01]">
+              <div className="flex items-center justify-center w-12 h-12 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 font-bold group-hover:scale-110 transition-transform duration-500">
                 1
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-2">Initial Conversation</h3>
-                <p className="text-gray-400">Schedule a deep dive into your background and research interests</p>
+                <h3 className="text-xl font-bold mb-2 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  Initial Conversation
+                </h3>
+                <p className="text-gray-400 font-light tracking-wide">
+                  Schedule a deep dive into your background and research interests
+                </p>
               </div>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105">
-                <a href="https://cal.com/swarms" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+                <a 
+                  href="https://cal.com/swarms/1-on-1-team-meeting" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="relative flex items-center gap-2 group-hover/btn:text-white transition-colors duration-500"
+                >
                   Book Call
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-500" />
                 </a>
               </button>
             </div>
             
-            <div className="flex items-center gap-6 p-8 bg-gradient-to-br from-green-500/10 to-black border border-green-500/20 rounded-2xl hover:border-green-500/40 transition-all duration-300">
-              <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 font-bold">
+            <div className="group flex items-center gap-8 p-8 bg-gradient-to-br from-green-500/5 to-black border border-green-500/20 rounded-2xl hover:border-green-500/40 transition-all duration-500 hover:scale-[1.01]">
+              <div className="flex items-center justify-center w-12 h-12 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 font-bold group-hover:scale-110 transition-transform duration-500">
                 2
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-2">Technical Demonstration</h3>
-                <p className="text-gray-400">Complete meaningful contributions to our framework</p>
+                <h3 className="text-xl font-bold mb-2 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  Technical Demonstration
+                </h3>
+                <p className="text-gray-400 font-light tracking-wide">
+                  Complete meaningful contributions to our framework
+                </p>
               </div>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105">
-                <a href="https://github.com/kyegomez/swarms" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+                <a 
+                  href="https://github.com/kyegomez/swarms" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="relative flex items-center gap-2 group-hover/btn:text-white transition-colors duration-500"
+                >
                   Explore
-                  <Code className="w-4 h-4" />
+                  <Code className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-500" />
                 </a>
               </button>
             </div>
             
-            <div className="flex items-center gap-6 p-8 bg-gradient-to-br from-purple-500/10 to-black border border-purple-500/20 rounded-2xl">
-              <div className="flex items-center justify-center w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-400 font-bold">
+            <div className="group flex items-center gap-8 p-8 bg-gradient-to-br from-purple-500/5 to-black border border-purple-500/20 rounded-2xl hover:border-purple-500/40 transition-all duration-500 hover:scale-[1.01]">
+              <div className="flex items-center justify-center w-12 h-12 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 font-bold group-hover:scale-110 transition-transform duration-500">
                 3
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-2">Technical Review</h3>
-                <p className="text-gray-400">Comprehensive evaluation of your contributions</p>
+                <h3 className="text-xl font-bold mb-2 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  Technical Review
+                </h3>
+                <p className="text-gray-400 font-light tracking-wide">
+                  Comprehensive evaluation of your contributions
+                </p>
               </div>
             </div>
             
-            <div className="flex items-center gap-6 p-8 bg-gradient-to-br from-red-500/10 to-black border border-red-500/20 rounded-2xl">
-              <div className="flex items-center justify-center w-12 h-12 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 font-bold">
+            <div className="group flex items-center gap-8 p-8 bg-gradient-to-br from-red-500/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.01]">
+              <div className="flex items-center justify-center w-12 h-12 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 font-bold group-hover:scale-110 transition-transform duration-500">
                 4
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-2">Welcome to the Team</h3>
-                <p className="text-gray-400">Begin your journey shaping the future of AI</p>
+                <h3 className="text-xl font-bold mb-2 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  Welcome to the Team
+                </h3>
+                <p className="text-gray-400 font-light tracking-wide">
+                  Begin your journey shaping the future of AI
+                </p>
               </div>
-              <UserCheck className="w-8 h-8 text-red-400" />
+              <UserCheck className="w-8 h-8 text-red-400 group-hover:scale-110 transition-transform duration-500" />
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-black">
+      <section className="py-32 px-4 bg-black">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-red-950/20 to-black border border-red-500/30 rounded-2xl p-12 backdrop-blur-sm">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Ready to Make History?</h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <div className="group bg-gradient-to-br from-red-950/10 to-black border border-red-500/30 rounded-2xl p-16 backdrop-blur-sm hover:border-red-500/40 transition-all duration-500 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent relative">
+              Ready to Make History?
+            </h2>
+            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light tracking-wide relative">
               Join us in building the infrastructure that will power the next generation of autonomous agents and multi-agent systems
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25">
-                <a href="https://cal.com/swarms" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center relative">
+              <button className="group/btn relative bg-white text-black px-8 py-4 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+                <a 
+                  href="https://cal.com/swarms/1-on-1-team-meeting" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="relative flex items-center justify-center gap-3 group-hover/btn:text-white transition-colors duration-500"
+                >
                   Begin Your Journey
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-500" />
                 </a>
               </button>
-              <button className="border border-red-500/30 text-red-300 hover:bg-red-500/10 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105">
-                <a href="https://docs.swarms.world" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3">
+              <button className="group/btn relative border border-red-500/30 text-red-300 hover:bg-red-500/10 px-8 py-4 rounded-xl font-medium transition-all duration-500 hover:scale-105">
+                <a 
+                  href="https://docs.swarms.world" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center gap-3"
+                >
                   Explore Research
-                  <ExternalLink className="w-5 h-5" />
+                  <ExternalLink className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-500" />
                 </a>
               </button>
             </div>
