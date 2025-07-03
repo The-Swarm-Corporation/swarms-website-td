@@ -237,7 +237,7 @@ const HiringClientPage = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             <a 
-              href="https://cal.com/swarms/1-on-1-team-meeting" 
+              href="https://cal.com/swarms/swarms-careers" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="relative flex items-center gap-3 group-hover:text-white transition-colors duration-500"
@@ -496,7 +496,7 @@ const HiringClientPage = () => {
                   <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
                     <a 
-                      href="https://cal.com/swarms/1-on-1-team-meeting" 
+                      href="https://cal.com/swarms/swarms-careers" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="relative flex items-center justify-center gap-3 group-hover/btn:text-white transition-colors duration-500"
@@ -543,7 +543,7 @@ const HiringClientPage = () => {
               <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
                 <a 
-                  href="https://cal.com/swarms/1-on-1-team-meeting" 
+                  href="https://cal.com/swarms/swarms-careers" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="relative flex items-center gap-2 group-hover/btn:text-white transition-colors duration-500"
@@ -628,7 +628,7 @@ const HiringClientPage = () => {
               <button className="group/btn relative bg-white text-black px-8 py-4 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
                 <a 
-                  href="https://cal.com/swarms/1-on-1-team-meeting" 
+                  href="https://cal.com/swarms/swarms-careers" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="relative flex items-center justify-center gap-3 group-hover/btn:text-white transition-colors duration-500"
