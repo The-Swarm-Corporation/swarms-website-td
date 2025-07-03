@@ -188,39 +188,39 @@ const HiringClientPage = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-red-500/20 selection:text-red-200">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
+      <section className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center px-4 py-16 sm:py-0">
         {/* Enhanced Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-red-900/5 via-black to-red-900/10" />
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[100px] animate-pulse-slow" />
-          <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-red-400/3 rounded-full blur-[120px] animate-pulse-slower" />
+          <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-red-500/5 rounded-full blur-[100px] animate-pulse-slow" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-red-400/3 rounded-full blur-[120px] animate-pulse-slower" />
           {/* Grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black_70%,transparent_110%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] sm:bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black_70%,transparent_110%)]" />
         </div>
         
-        <div className="relative z-10 text-center max-w-6xl mx-auto">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-4">
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 mb-8 backdrop-blur-sm hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 mb-6 sm:mb-8 backdrop-blur-sm hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default"
           >
             <Rocket className="w-4 h-4" />
             <span className="text-sm font-medium tracking-wide">Let's Automate the Global Economy</span>
           </div>
           
-          <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-black mb-6 bg-gradient-to-r from-white via-red-100 to-red-300 bg-clip-text text-transparent leading-[0.9] tracking-tight">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-red-100 to-red-300 bg-clip-text text-transparent leading-[0.9] tracking-tight">
             Advance
             <br />
             Humanity
           </h1>
           
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 max-w-4xl mx-auto font-light tracking-wide">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-3 sm:mb-4 max-w-4xl mx-auto font-light tracking-wide">
             Join the world's first <span className="text-red-400 font-medium">multi-agent research lab</span>
           </p>
           
-          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             We're building autonomous agents that collaborate to simulate entire industries and civilizations
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16">
             <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
               <MapPin className="w-5 h-5 text-red-500" />
               <span className="font-light tracking-wide">Palo Alto, CA</span>
@@ -233,56 +233,52 @@ const HiringClientPage = () => {
           </div>
           
           <button 
-            className="group relative bg-white text-black px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-500 hover:scale-[1.02] overflow-hidden"
+            className="group relative w-full sm:w-auto bg-white text-black px-6 sm:px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-500 hover:scale-[1.02] overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             <a 
               href="https://cal.com/swarms/swarms-careers" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="relative flex items-center gap-3 group-hover:text-white transition-colors duration-500"
+              className="relative flex items-center justify-center gap-3 group-hover:text-white transition-colors duration-500"
             >
               Start Your Journey
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
             </a>
           </button>
-          
-          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50 hover:opacity-100 transition-opacity duration-300">
-            <ChevronDown className="w-6 h-6 text-red-400" />
-          </div>
         </div>
       </section>
 
       {/* Vision Section */}
-      <section className="py-32 px-4 bg-gradient-to-b from-black to-red-950/5">
+      <section className="py-16 sm:py-32 px-4 bg-gradient-to-b from-black to-red-950/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
+          <div className="text-center mb-12 sm:mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-4 sm:mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Our Vision
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent px-4">
               The Future We're Building
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide px-4">
               Creating autonomous systems that revolutionize how industries operate and evolve
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 px-2 sm:px-4">
             {visionItems.map((item, index) => (
               <div
                 key={index}
-                className="group relative p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 backdrop-blur-sm"
+                className="group relative p-6 sm:p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 backdrop-blur-sm"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
-                    <item.icon className="w-8 h-8 text-red-400" />
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-5 sm:mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
+                    <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
                     {item.description}
                   </p>
                 </div>
@@ -293,35 +289,35 @@ const HiringClientPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-32 px-4 bg-black">
+      <section className="py-16 sm:py-32 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
+          <div className="text-center mb-12 sm:mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-4 sm:mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Our Values
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent px-4">
               What Drives Us Forward
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide px-4">
               Our core principles that guide every decision and advancement we make
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 px-2 sm:px-4">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group relative p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 backdrop-blur-sm"
+                className="group relative p-6 sm:p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 backdrop-blur-sm"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
-                    <value.icon className="w-8 h-8 text-red-400" />
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-5 sm:mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
+                    <value.icon className="w-7 h-7 sm:w-8 sm:h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
                     {value.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
                     {value.description}
                   </p>
                 </div>
@@ -332,35 +328,35 @@ const HiringClientPage = () => {
       </section>
 
       {/* Qualities Section */}
-      <section className="py-32 px-4 bg-black">
+      <section className="py-16 sm:py-32 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
+          <div className="text-center mb-12 sm:mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-4 sm:mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Who We Seek
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent px-4">
               Exceptional Individuals
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light tracking-wide px-4">
               We seek those who combine deep technical expertise with the drive to push boundaries
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 px-2 sm:px-4">
             {qualities.map((quality, index) => (
               <div
                 key={index}
-                className="group relative p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm"
+                className="group relative p-6 sm:p-8 bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 backdrop-blur-sm"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
-                    <quality.icon className="w-8 h-8 text-red-400" />
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl mb-5 sm:mb-6 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500">
+                    <quality.icon className="w-7 h-7 sm:w-8 sm:h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
                     {quality.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed font-light">
+                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
                     {quality.description}
                   </p>
                 </div>
@@ -371,28 +367,28 @@ const HiringClientPage = () => {
       </section>
 
       {/* Requirements Section */}
-      <section className="py-32 px-4 bg-gradient-to-br from-red-950/5 to-black">
+      <section className="py-16 sm:py-32 px-4 bg-gradient-to-br from-red-950/5 to-black">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
+          <div className="text-center mb-12 sm:mb-20">
+            <div className="inline-block px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-4 sm:mb-6 hover:scale-105 hover:bg-red-500/15 transition-all duration-500 cursor-default">
               Requirements
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent px-4">
               What It Takes
             </h2>
-            <p className="text-xl text-gray-400 font-light tracking-wide">
+            <p className="text-lg sm:text-xl text-gray-400 font-light tracking-wide px-4">
               We maintain exceptionally high standards for complex AI research challenges
             </p>
           </div>
           
-          <div className="bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl p-12 backdrop-blur-sm hover:border-red-500/40 transition-all duration-500">
-            <div className="space-y-8">
+          <div className="bg-gradient-to-br from-red-950/5 to-black border border-red-500/20 rounded-2xl p-6 sm:p-12 backdrop-blur-sm hover:border-red-500/40 transition-all duration-500 mx-2 sm:mx-4">
+            <div className="space-y-6 sm:space-y-8">
               {requirements.map((req, index) => (
-                <div key={index} className="flex items-start gap-6 group">
+                <div key={index} className="flex items-start gap-4 sm:gap-6 group">
                   <div className="p-2 bg-red-500/10 border border-red-500/30 rounded-lg mt-1 group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-500 flex-shrink-0">
-                    <CheckCircle className="w-5 h-5 text-red-400" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-400" />
                   </div>
-                  <p className="text-lg text-gray-300 leading-relaxed font-light tracking-wide group-hover:text-white transition-colors duration-300">
+                  <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light tracking-wide group-hover:text-white transition-colors duration-300">
                     {req}
                   </p>
                 </div>
