@@ -1,3 +1,10 @@
+/**
+ * SEO & Favicon improvements
+ * - Use /logo.svg for favicon and all icon fields
+ * - Use /backend.jpg for Open Graph and Twitter images
+ * - Add high-performance SEO best practices
+ */
+
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { siteConfig } from "./metadata"
@@ -35,7 +42,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: "/backend.jpg",
         width: 1200,
         height: 630,
         alt: "Swarms AI - Enterprise Multi-Agent Framework",
@@ -46,14 +53,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: ["/backend.jpg"],
     creator: "@swarms_corp",
     site: "@swarms_corp",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
   alternates: {
@@ -70,7 +77,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: 'v0.dev'
+  generator: 'v0.dev',
+  category: 'technology',
+  applicationName: siteConfig.name,
+  referrer: 'origin-when-cross-origin',
 }
 
 interface RootLayoutProps {
@@ -91,6 +101,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         <Analytics />
 
+        {/* SEO: Organization, Website, and Application structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -103,6 +114,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   name: siteConfig.company.name,
                   url: siteConfig.url,
                   description: siteConfig.company.description,
+                  logo: "/logo.svg",
                   foundingDate: siteConfig.company.foundingDate,
                   founder: {
                     "@type": "Person",
@@ -140,6 +152,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     "@id": `${siteConfig.url}/#organization`,
                   },
                   keywords: siteConfig.keywords.join(", "),
+                  image: "/backend.jpg",
                 },
               ],
             }),

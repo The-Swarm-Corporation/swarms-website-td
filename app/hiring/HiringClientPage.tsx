@@ -231,7 +231,7 @@ const HiringClientPage = () => {
               <span className="font-light tracking-wide">In-Person Collaboration</span>
             </div>
           </div>
-          
+ 
           <button 
             className="group relative w-full sm:w-auto bg-white text-black px-6 sm:px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-500 hover:scale-[1.02] overflow-hidden"
           >

@@ -4,9 +4,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Button } from "@/components/ui/button"
 import { CardWrapper } from "./card-wrapper"
 import { motion } from "framer-motion"
-import { Cpu, Globe, Zap, Store, ArrowRight, ExternalLink } from "lucide-react"
+import { BookOpen, Code, FileText, ExternalLink, ArrowRight } from "lucide-react"
 
-export function FeaturesGrid() {
+export function Cookbook() {
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -22,46 +22,38 @@ export function FeaturesGrid() {
     show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   }
 
-  const swarmsStack = [
+  const cookbookResources = [
     {
-      icon: Cpu,
-      title: "SWARMS-RS",
-      subtitle: "The First Multi-Agent Framework in Rust",
-      description: "Ultra-fast, memory-safe, and production-ready multi-agent framework built in Rust for maximum performance and reliability.",
+      icon: BookOpen,
+      title: "Examples Overview",
+      description: "Complete examples directory with comprehensive guides and tutorials",
+      link: "https://docs.swarms.world/en/latest/examples/",
       gradient: "from-red-600 to-red-700",
-      link: "https://crates.io/crates/swarms-rs",
-      docsLink: "https://docs.swarms.world",
-      badge: "RUST"
+      badge: "GUIDES"
     },
     {
-      icon: Zap,
-      title: "SWARMS PYTHON",
-      subtitle: "Core Swarms Python Framework",
-      description: "The original Swarms framework in Python with full backwards compatibility with LangChain, AutoGen, and other popular frameworks.",
+      icon: Code,
+      title: "Cookbook Index",
+      description: "Curated example collection with best practices and patterns",
+      link: "https://docs.swarms.world/en/latest/examples/cookbook_index/",
       gradient: "from-red-500 to-red-600",
-      link: "https://github.com/kyegomez/swarms",
-      docsLink: "https://docs.swarms.world",
-      badge: "PYTHON"
+      badge: "COOKBOOK"
     },
     {
-      icon: Globe,
-      title: "SWARMS API",
-      subtitle: "Ultra-Optimized Hosted Runtime",
-      description: "Enterprise-grade hosted API with ultra-optimized runtime for deploying and scaling your agent swarms in production.",
+      icon: FileText,
+      title: "Paper Implementations",
+      description: "Research paper implementations and academic examples",
+      link: "https://docs.swarms.world/en/latest/examples/paper_implementations/",
       gradient: "from-red-700 to-red-800",
-      link: "https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/",
-      docsLink: "https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/",
-      badge: "API"
+      badge: "RESEARCH"
     },
     {
-      icon: Store,
-      title: "SWARMS MARKETPLACE",
-      subtitle: "Buy & Sell Agents, Prompts & More",
-      description: "Discover, buy, and sell agents, prompts, tools, and components on swarms.world - the premier marketplace for AI agents.",
+      icon: ExternalLink,
+      title: "Templates & Applications",
+      description: "Reusable templates and production-ready applications",
+      link: "https://docs.swarms.world/en/latest/examples/templates/",
       gradient: "from-red-600 to-red-700",
-      link: "https://swarms.world",
-      docsLink: "https://swarms.world",
-      badge: "MARKETPLACE"
+      badge: "TEMPLATES"
     }
   ]
 
@@ -86,12 +78,12 @@ export function FeaturesGrid() {
       >
         <h2 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl text-white font-orbitron">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
-            The Swarms Stack
+            Cookbook & Templates
           </span>
         </h2>
         <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
         <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-orbitron">
-          A complete ecosystem for building, deploying, and scaling multi-agent systems
+          Get started quickly with curated examples, templates, and implementation guides
         </p>
       </motion.div>
 
@@ -102,7 +94,7 @@ export function FeaturesGrid() {
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
       >
-        {swarmsStack.map((item, index) => {
+        {cookbookResources.map((item, index) => {
           const Icon = item.icon
           return (
             <motion.div key={index} variants={item}>
@@ -127,49 +119,28 @@ export function FeaturesGrid() {
                     <CardTitle className="text-2xl text-white font-black mb-2 tracking-wider font-orbitron">
                       {item.title}
                     </CardTitle>
-                    <p className="text-red-400 font-semibold mb-4 tracking-wide font-orbitron">
-                      {item.subtitle}
-                    </p>
                     <CardDescription className="text-gray-300 leading-relaxed text-base font-orbitron">
                       {item.description}
                     </CardDescription>
                   </CardHeader>
                   
                   <div className="p-6 pt-0 relative z-10">
-                    <div className="flex gap-3">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="border-red-500/30 text-red-400 hover:bg-red-500/10 hover:border-red-500 transition-all duration-300 font-orbitron tracking-wider"
-                        asChild
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-red-500/30 text-red-400 hover:bg-red-500/10 hover:border-red-500 transition-all duration-300 font-orbitron tracking-wider"
+                      asChild
+                    >
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2"
                       >
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center space-x-2"
-                        >
-                          <span>GET STARTED</span>
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="border-red-500/30 text-red-400 hover:bg-red-500/10 hover:border-red-500 transition-all duration-300 font-orbitron tracking-wider"
-                        asChild
-                      >
-                        <a
-                          href={item.docsLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center space-x-2"
-                        >
-                          <span>DOCS</span>
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
+                        <span>EXPLORE</span>
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
                   </div>
                   
                   {/* Hover effect line */}
@@ -195,16 +166,16 @@ export function FeaturesGrid() {
           asChild
         >
           <a
-            href="https://github.com/kyegomez/swarms"
+            href="https://docs.swarms.world/en/latest/examples/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-3"
           >
-            <span>START BUILDING WITH SWARMS</span>
+            <span>BROWSE ALL EXAMPLES</span>
             <ArrowRight className="h-5 w-5" />
           </a>
         </Button>
       </motion.div>
     </div>
   )
-}
+} 

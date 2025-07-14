@@ -75,6 +75,100 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Ensure text is selectable */
+  * {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  /* Allow text selection on all elements */
+  h1, h2, h3, h4, h5, h6, p, span, div, a, button {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  /* Ensure buttons and interactive elements still work */
+  button, a, [role="button"] {
+    cursor: pointer;
+  }
+  
+  /* Override any potential text selection issues */
+  .text-white, .text-gray-300, .text-gray-400, .text-red-400, .text-red-500 {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* Ensure all text content is selectable */
+  main, article, section, div, p, h1, h2, h3, h4, h5, h6, span {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* Additional text selection utilities */
+  .select-text {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* Ensure motion components don't interfere with text selection */
+  [data-framer-motion] {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* Override Framer Motion text selection issues */
+  .motion-div, [data-framer-motion], [style*="transform"] {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* Force text selection on all motion components */
+  div[class*="motion"], div[class*="animate"] {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+  
+  /* --- TEXT SELECTION & INTERACTIVITY RESET --- */
+
+  /* Only allow text selection on text elements */
+  h1, h2, h3, h4, h5, h6, p, span, div, section, article, main, .select-text {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+
+  /* Restore interactivity for buttons and links */
+  a, button, [role="button"], [type="button"], [type="submit"] {
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+
+  /* Remove pointer-events: none from backgrounds or overlays if present */
+  .pointer-events-none {
+    pointer-events: none !important;
+  }
 }
 
 @layer utilities {

@@ -34,10 +34,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
-// Import the EasterNotification component at the top with other imports
-import { EasterNotification } from "@/components/easter-notification"
-
 export function Navigation() {
   const { setTheme, theme } = useTheme()
   const [isOpen, setIsOpen] = React.useState(false)
@@ -111,7 +107,6 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b-2 border-red-500/30 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-lg shadow-red-500/10">
-      <EasterNotification />
       <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
         <div className="mr-6 flex">
           <Link href="/" className="flex items-center group">
