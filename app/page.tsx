@@ -775,31 +775,6 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="py-8 md:py-12 bg-black border-t border-red-500/20">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <p className="text-center text-sm leading-loose text-gray-400 md:text-left">
-            Built by{" "}
-            <a
-              href="https://swarms.ai"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium text-red-400 hover:text-red-300 underline underline-offset-4 transition-colors"
-            >
-              Swarms AI
-            </a>
-            . Source code available on{" "}
-            <a
-              href="https://github.com/kyegomez/swarms"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium text-red-400 hover:text-red-300 underline underline-offset-4 transition-colors"
-            >
-              GitHub
-            </a>
-            .
-          </p>
-        </div>
-      </footer>
     </div>
   )
 }

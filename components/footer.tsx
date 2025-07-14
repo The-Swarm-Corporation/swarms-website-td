@@ -29,6 +29,17 @@ export function Footer() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-red-500 to-transparent" />
 
         <div className="container mx-auto px-4 py-8">
+          {/* Mission Statement Section */}
+          <div className="mb-8 flex items-center gap-3">
+            <img src="/logo.svg" alt="Swarms Logo" className="h-8 w-8" />
+            <div>
+              <h2 className="text-xl font-bold text-white">Swarms</h2>
+              <p className="text-sm text-gray-400">
+                Enabling organizations to become fully autonomous through multi-agent collaboration.
+              </p>
+            </div>
+          </div>
+
           <div className="relative grid grid-cols-1 gap-6 md:grid-cols-4">
             {/* Products */}
             <div className="relative overflow-hidden rounded-md border border-red-900/20 bg-black p-4">
@@ -54,11 +65,11 @@ export function Footer() {
                       href={item.url}
                       target={item.url.startsWith("http") ? "_blank" : undefined}
                       rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="flex items-center justify-between rounded border border-red-900/20 bg-black p-2 text-sm transition-all duration-300 hover:border-red-500/60 hover:bg-red-950/20"
+                      className="flex items-center justify-between rounded border border-transparent bg-transparent p-2 text-sm transition-all duration-300 hover:border-red-500/40 hover:bg-red-950/10 hover:shadow-sm"
                     >
                       <div className="flex items-center gap-2">
                         <item.icon className="h-3.5 w-3.5 text-red-500" />
-                        <div className="text-xs text-gray-300">{item.name}</div>
+                        <div className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-100">{item.name}</div>
                       </div>
                       <ArrowRight className="h-3 w-0 transform opacity-0 transition-all duration-300 group-hover:w-3 group-hover:translate-x-1 group-hover:opacity-100" />
                     </Link>
@@ -90,13 +101,13 @@ export function Footer() {
                     href={item.url}
                     target={item.url.startsWith("http") ? "_blank" : undefined}
                     rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group flex items-center justify-between rounded border border-red-900/20 bg-black p-2 text-sm transition-all duration-300 hover:border-red-500/60 hover:bg-red-950/20"
+                    className="group flex items-center justify-between rounded border border-transparent bg-transparent p-2 text-sm transition-all duration-300 hover:border-red-500/40 hover:bg-red-950/10 hover:shadow-sm"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/50">
+                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/30 transition-colors duration-300 group-hover:bg-red-950/60">
                         <item.icon className="h-3.5 w-3.5 text-red-500" />
                       </div>
-                      <span className="text-xs text-gray-300">{item.name}</span>
+                      <span className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-100">{item.name}</span>
                     </div>
                     <ArrowRight className="h-3 w-0 transform opacity-0 transition-all duration-300 group-hover:w-3 group-hover:translate-x-1 group-hover:opacity-100" />
                   </Link>
@@ -123,13 +134,13 @@ export function Footer() {
                     href={item.url}
                     target={item.url.startsWith("http") ? "_blank" : undefined}
                     rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group flex items-center justify-between rounded border border-red-900/20 bg-black p-2 text-sm transition-all duration-300 hover:border-red-500/60 hover:bg-red-950/20"
+                    className="group flex items-center justify-between rounded border border-transparent bg-transparent p-2 text-sm transition-all duration-300 hover:border-red-500/40 hover:bg-red-950/10 hover:shadow-sm"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/50">
+                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/30 transition-colors duration-300 group-hover:bg-red-950/60">
                         <item.icon className="h-3.5 w-3.5 text-red-500" />
                       </div>
-                      <span className="text-xs text-gray-300">{item.name}</span>
+                      <span className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-100">{item.name}</span>
                       {item.isNew && (
                         <span className="text-xs px-1.5 py-0.5 bg-red-500/20 text-red-500 rounded-full">New</span>
                       )}
@@ -154,59 +165,29 @@ export function Footer() {
                   { name: "Events Calendar", icon: Calendar, url: "https://lu.ma/swarms_calendar" },
                   { name: "Book a Call", icon: Phone, url: "https://cal.com/swarms" },
                   { name: "Blog", icon: FileText, url: "https://medium.com/@kyeg" },
+                  { name: "Swarms Twitter", icon: Twitter, url: "https://twitter.com/swarms_corp" },
+                  { name: "Swarms Foundation", icon: Twitter, url: "https://twitter.com/swarmsfndn" },
+                  { name: "Swarms Founder", icon: Twitter, url: "https://twitter.com/KyeGomezB" },
+                  { name: "Swarms News", icon: Twitter, url: "https://twitter.com/SwarmsStatus" },
                 ].map((item, index) => (
                   <Link
                     key={index}
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between rounded border border-red-900/20 bg-black p-2 text-sm transition-all duration-300 hover:border-red-500/60 hover:bg-red-950/20"
+                    className="group flex items-center justify-between rounded border border-transparent bg-transparent p-2 text-sm transition-all duration-300 hover:border-red-500/40 hover:bg-red-950/10 hover:shadow-sm"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/50">
+                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/30 transition-colors duration-300 group-hover:bg-red-950/60">
                         <item.icon className="h-3.5 w-3.5 text-red-500" />
                       </div>
-                      <span className="text-xs text-gray-300">{item.name}</span>
+                      <span className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-100">{item.name}</span>
                     </div>
 
                     <ArrowRight className="h-3 w-0 transform opacity-0 transition-all duration-300 group-hover:w-3 group-hover:translate-x-1 group-hover:opacity-100" />
                   </Link>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* Swarms Official Twitter Channels - Now as a separate section */}
-          <div className="mt-6 relative overflow-hidden rounded-md border border-red-900/20 bg-black p-4">
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-red-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-              Swarms Official Twitter
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-              {[
-                { name: "Swarms Twitter", handle: "@swarms_corp", url: "https://twitter.com/swarms_corp" },
-                { name: "Swarms Foundation", handle: "@swarmsfndn", url: "https://twitter.com/swarmsfndn" },
-                { name: "Swarms Founder", handle: "@KyeGomezB", url: "https://twitter.com/KyeGomezB" },
-                { name: "Swarms News", handle: "@SwarmsStatus", url: "https://twitter.com/SwarmsStatus" },
-              ].map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-between rounded border border-red-900/20 bg-black p-2 text-sm transition-all duration-300 hover:border-red-500/60 hover:bg-red-950/20"
-                >
-                  <div className="flex items-center gap-2">
-                    <Twitter className="h-3.5 w-3.5 text-red-500" />
-                    <div>
-                      <div className="text-xs text-gray-400">{item.name}</div>
-                      <div className="text-xs text-red-500">{item.handle}</div>
-                    </div>
-                  </div>
-                  <ArrowRight className="h-3 w-0 transform opacity-0 transition-all duration-300 group-hover:w-3 group-hover:translate-x-1 group-hover:opacity-100" />
-                </Link>
-              ))}
             </div>
           </div>
 
