@@ -203,8 +203,6 @@ export default function Home() {
               className="absolute w-[300px] h-[300px] rounded-full bg-red-500/5 blur-[80px] animate-pulse"
               style={{ top: "70%", right: "10%", animationDelay: "1s" }}
             />
-            <div className="absolute top-1/4 left-1/4 w-1 h-32 bg-gradient-to-b from-red-500 to-transparent animate-pulse" />
-            <div className="absolute top-1/3 right-1/4 w-1 h-24 bg-gradient-to-b from-red-500 to-transparent animate-pulse" style={{ animationDelay: "0.5s" }} />
           </div>
 
           <div className="container relative px-4 sm:px-6">
@@ -228,44 +226,21 @@ export default function Home() {
                 >
                   <h1
                     id="hero-title"
-                    className="text-6xl font-black tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl relative font-orbitron select-text"
+                    className="relative select-text"
                     style={{ userSelect: 'text', WebkitUserSelect: 'text', MozUserSelect: 'text', msUserSelect: 'text' }}
                   >
-                                      <span 
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse select-text"
-                    style={{ userSelect: 'text', WebkitUserSelect: 'text', MozUserSelect: 'text', msUserSelect: 'text' }}
-                  >
-                    swarms
-                  </span>
-                    <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse" style={{ animationDelay: "0.1s", filter: "blur(1px)" }}>
+                    <span 
+                      className="font-orbitron text-[12rem] sm:text-[16rem] md:text-[20rem] lg:text-[24rem] text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse select-text leading-none"
+                      style={{ userSelect: 'text', WebkitUserSelect: 'text', MozUserSelect: 'text', msUserSelect: 'text' }}
+                    >
                       swarms
-                    </div>
+                    </span>
                   </h1>
                   <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent animate-pulse" />
                 </motion.div>
 
-                <motion.div
-                  className="mx-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold select-text"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 1 }}
-                >
-                  <TypingEffect
-                    texts={[
-                      "BUILD MULTI-AGENT STRUCTURES",
-                      "DEPLOY AGENTS INTO PRODUCTION", 
-                      "MONITOR & OBSERVE YOUR AGENTS",
-                      "AUTOMATE YOUR ENTERPRISE"
-                    ]}
-                    typingSpeed={60}
-                    deletingSpeed={40}
-                    delayBetweenTexts={2500}
-                    className="text-white font-orbitron tracking-wider select-text"
-                  />
-                </motion.div>
-
                 <motion.p
-                  className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light font-orbitron select-text"
+                  className="text-lg md:text-4xl text-gray-300 max-w-3xl mx-auto font-light font-orbitron select-text"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
@@ -321,7 +296,7 @@ export default function Home() {
                 ].map((stat, index) => (
                   <div key={index} className="text-center select-text">
                     <div className="text-3xl md:text-4xl font-black text-red-500 mb-2 font-orbitron select-text">{stat.value}</div>
-                    <div className="text-sm text-gray-400 font-orbitron tracking-wider select-text">{stat.label}</div>
+                    <div className="text-sm text-gray-400 font-sans tracking-wider select-text">{stat.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -347,7 +322,7 @@ export default function Home() {
               </span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-orbitron">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-sans">
               Transform your organization with the most advanced multi-agent framework ever created
             </p>
           </motion.div>
@@ -378,7 +353,7 @@ export default function Home() {
                         <CardTitle className="text-xl text-white font-bold mb-4 tracking-wider font-orbitron">
                           {benefit.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-300 leading-relaxed font-orbitron">
+                        <CardDescription className="text-gray-300 leading-relaxed font-sans">
                           {benefit.description}
                         </CardDescription>
                       </CardHeader>
@@ -433,7 +408,7 @@ export default function Home() {
               </span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-orbitron">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-sans">
               A complete ecosystem for building, deploying, and scaling multi-agent systems
             </p>
           </motion.div>
@@ -470,10 +445,10 @@ export default function Home() {
                         <CardTitle className="text-2xl text-white font-black mb-2 tracking-wider font-orbitron">
                           {item.title}
                         </CardTitle>
-                        <p className="text-red-400 font-semibold mb-4 tracking-wide font-orbitron">
+                        <p className="text-red-400 font-semibold mb-4 tracking-wide font-sans">
                           {item.subtitle}
                         </p>
-                        <CardDescription className="text-gray-300 leading-relaxed text-base font-orbitron">
+                        <CardDescription className="text-gray-300 leading-relaxed text-base font-sans">
                           {item.description}
                         </CardDescription>
                       </CardHeader>
@@ -575,7 +550,7 @@ export default function Home() {
               </span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-orbitron">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-sans">
               Get started quickly with curated examples, templates, and implementation guides
             </p>
           </motion.div>
@@ -612,7 +587,7 @@ export default function Home() {
                         <CardTitle className="text-2xl text-white font-black mb-2 tracking-wider font-orbitron">
                           {item.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-300 leading-relaxed text-base font-orbitron">
+                        <CardDescription className="text-gray-300 leading-relaxed text-base font-sans">
                           {item.description}
                         </CardDescription>
                       </CardHeader>
@@ -726,7 +701,7 @@ export default function Home() {
               </motion.h2>
               
               <motion.p
-                className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed font-orbitron"
+                className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed font-sans"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -791,7 +766,7 @@ export default function Home() {
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-2xl md:text-3xl font-black text-red-500 mb-2 font-orbitron">{stat.value}</div>
-                    <div className="text-sm text-gray-400 font-orbitron tracking-wider">{stat.label}</div>
+                    <div className="text-sm text-gray-400 font-sans tracking-wider">{stat.label}</div>
                   </div>
                 ))}
               </motion.div>

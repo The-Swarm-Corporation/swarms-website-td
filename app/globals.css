@@ -74,6 +74,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: Helvetica, Arial, sans-serif;
   }
   
   /* Ensure text is selectable */
