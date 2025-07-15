@@ -137,7 +137,7 @@ export function Cookbook() {
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2"
                       >
-                        <span>EXPLORE</span>
+                        <span>Get Started</span>
                         <ExternalLink className="h-4 w-4" />
                       </a>
                     </Button>

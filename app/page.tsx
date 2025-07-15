@@ -230,13 +230,13 @@ export default function Home() {
                     style={{ userSelect: 'text', WebkitUserSelect: 'text', MozUserSelect: 'text', msUserSelect: 'text' }}
                   >
                     <span 
-                      className="font-orbitron text-[12rem] sm:text-[16rem] md:text-[20rem] lg:text-[24rem] text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse select-text leading-none"
+                      className="font-orbitron text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] xl:text-[13rem] text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse select-text leading-none"
                       style={{ userSelect: 'text', WebkitUserSelect: 'text', MozUserSelect: 'text', msUserSelect: 'text' }}
                     >
                       swarms
                     </span>
                   </h1>
-                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent animate-pulse" />
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent animate-pulse" />
                 </motion.div>
 
                 <motion.p
@@ -605,7 +605,7 @@ export default function Home() {
                             rel="noopener noreferrer"
                             className="flex items-center space-x-2"
                           >
-                            <span>EXPLORE</span>
+                            <span>Get Started</span>
                             <ExternalLink className="h-4 w-4" />
                           </a>
                         </Button>
