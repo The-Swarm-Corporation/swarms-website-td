@@ -525,6 +525,199 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Features Section */}
+        <div className="container py-20 md:py-32 px-4 sm:px-6 bg-black relative overflow-hidden">
+          {/* Static Grid Canvas Background */}
+          <div className="absolute inset-0">
+            {/* Static grid lines */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center space-y-6 mb-16 md:mb-20 relative z-10"
+          >
+            <h2 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl text-white font-orbitron">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
+                Features
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-sans">
+              Swarms has pioneered world-class infrastructure for multi-agent collaboration such as communication protocols, optimized runtimes, memory systems, and simulation environments.
+            </p>
+          </motion.div>
+
+          {/* Dynamic Grid Layout */}
+          <div className="relative z-10">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              {[
+                {
+                  title: "Multi-Agent Architectures",
+                  description: "Build complex hierarchical, sequential, and parallel agent collaboration systems",
+                  link: "https://docs.swarms.world",
+                  icon: "🔗",
+                  position: "col-span-1 md:col-span-2 lg:col-span-1"
+                },
+                {
+                  title: "Agent-To-Agent Communication Protocols",
+                  description: "Advanced communication protocols for seamless agent interaction",
+                  link: "https://docs.swarms.world",
+                  icon: "📡",
+                  position: "col-span-1"
+                },
+                {
+                  title: "Ultra-Optimized Agent Execution Runtime",
+                  description: "High-performance runtime for maximum agent efficiency and speed",
+                  link: "https://docs.swarms.world",
+                  icon: "⚡",
+                  position: "col-span-1 md:col-span-2 lg:col-span-1"
+                },
+                {
+                  title: "Multi-Agent Memory Systems",
+                  description: "Sophisticated memory management for complex agent workflows",
+                  link: "https://docs.swarms.world",
+                  icon: "🧠",
+                  position: "col-span-1"
+                },
+                {
+                  title: "Multi-Agent Simulation Environments",
+                  description: "Advanced simulation environments for testing and training agent swarms",
+                  link: "https://docs.swarms.world",
+                  icon: "🌐",
+                  position: "col-span-1 md:col-span-2 lg:col-span-1"
+                },
+                {
+                  title: "Enterprise Security & Compliance",
+                  description: "Built-in security, governance, and compliance features for enterprise deployments",
+                  link: "https://docs.swarms.world",
+                  icon: "🛡️",
+                  position: "col-span-1"
+                }
+              ].map((feature, index) => (
+                <motion.div 
+                  key={index} 
+                  variants={item}
+                  className={feature.position}
+                >
+                  <CardWrapper className="h-full transition-all duration-700 hover:translate-y-[-12px] hover:scale-[1.03] group">
+                    <Card className="border-2 border-red-500/30 bg-black/60 backdrop-blur-md h-full relative overflow-hidden">
+                      {/* Animated border glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-transparent to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      
+                      {/* Floating particles */}
+                      <div className="absolute inset-0 pointer-events-none">
+                        <motion.div
+                          className="absolute w-2 h-2 bg-red-500 rounded-full"
+                          animate={{
+                            x: [0, 100, 0],
+                            y: [0, -50, 0],
+                            opacity: [0, 1, 0],
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Number.POSITIVE_INFINITY,
+                            delay: index * 0.5,
+                          }}
+                          style={{ top: "20%", left: "10%" }}
+                        />
+                        <motion.div
+                          className="absolute w-1 h-1 bg-red-400 rounded-full"
+                          animate={{
+                            x: [0, -80, 0],
+                            y: [0, 60, 0],
+                            opacity: [0, 1, 0],
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Number.POSITIVE_INFINITY,
+                            delay: index * 0.7,
+                          }}
+                          style={{ top: "70%", right: "15%" }}
+                        />
+                      </div>
+
+                      <CardHeader className="relative z-10 text-center p-8">
+                        <div className="text-4xl mb-4">{feature.icon}</div>
+                        <CardTitle className="text-xl text-white font-black mb-4 tracking-wider font-orbitron">
+                          {feature.title}
+                        </CardTitle>
+                        <CardDescription className="text-gray-300 leading-relaxed text-base font-sans">
+                          {feature.description}
+                        </CardDescription>
+                      </CardHeader>
+                      
+                      <div className="p-8 pt-0 relative z-10">
+                        <Button
+                          variant="outline"
+                          size="lg"
+                          className="w-full border-2 border-red-500/50 text-red-400 hover:bg-red-500/20 hover:border-red-500 hover:text-white transition-all duration-500 font-orbitron tracking-wider group-hover:scale-105"
+                          asChild
+                        >
+                          <a
+                            href={feature.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center space-x-3"
+                          >
+                            <span>EXPLORE FEATURE</span>
+                            <ExternalLink className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                          </a>
+                        </Button>
+                      </div>
+                      
+                      {/* Animated progress bar */}
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-red-500/20">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-red-500 to-red-600"
+                          initial={{ width: "0%" }}
+                          whileInView={{ width: "100%" }}
+                          transition={{ duration: 2, delay: index * 0.2 }}
+                          viewport={{ once: true }}
+                        />
+                      </div>
+                    </Card>
+                  </CardWrapper>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            className="mt-20 text-center relative z-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Button
+              size="lg"
+              className="bg-red-600 hover:bg-red-700 hover:scale-105 transform transition-all duration-300 font-bold text-lg px-8 py-6 border-2 border-red-500 shadow-lg shadow-red-500/25 font-orbitron"
+              asChild
+            >
+              <a
+                href="https://github.com/kyegomez/swarms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3"
+              >
+                <span>GET STARTED ON GITHUB</span>
+                <ArrowRight className="h-5 w-5" />
+              </a>
+            </Button>
+          </motion.div>
+        </div>
+
         {/* Cookbook Section */}
         <div className="container py-20 md:py-32 px-4 sm:px-6 bg-black relative">
           {/* Cyberpunk grid background */}
