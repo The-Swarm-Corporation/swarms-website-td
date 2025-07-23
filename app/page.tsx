@@ -250,14 +250,14 @@ export default function Home() {
               </motion.div>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-6 sm:space-x-6 w-full sm:w-auto"
+                className="flex flex-col sm:flex-row gap-6 sm:space-x-6 w-full sm:w-auto relative z-10"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
                 <Button
                   size="lg"
-                  className="bg-red-600 hover:bg-red-700 hover:scale-105 transform transition-all duration-300 w-full sm:w-auto font-bold text-lg px-8 py-6 border-2 border-red-500 shadow-lg shadow-red-500/25 font-orbitron"
+                  className="bg-red-600 hover:bg-red-700 hover:scale-105 transform transition-all duration-300 w-full sm:w-auto font-bold text-lg px-8 py-6 border-2 border-red-500 shadow-lg shadow-red-500/25 font-orbitron relative z-20 pointer-events-auto"
                   asChild
                 >
                   <a
@@ -265,7 +265,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Get started with Swarms AI on GitHub"
-                    className="flex items-center space-x-2"
+                    className="flex items-center space-x-2 pointer-events-auto"
                   >
                     <Zap className="h-5 w-5" />
                     <span>Get Started</span>
@@ -275,7 +275,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-red-500 text-red-500 hover:bg-red-500/10 hover:scale-105 transform transition-all duration-300 w-full sm:w-auto font-mono text-lg px-8 py-6 bg-black/50 backdrop-blur-sm font-orbitron"
+                  className="border-2 border-red-500 text-red-500 hover:bg-red-500/10 hover:scale-105 transform transition-all duration-300 w-full sm:w-auto font-mono text-lg px-8 py-6 bg-black/50 backdrop-blur-sm font-orbitron relative z-20 pointer-events-auto"
                 >
                   <Terminal className="mr-3 h-5 w-5" aria-hidden="true" />
                   <span aria-label="Installation command">pip install -U swarms</span>
