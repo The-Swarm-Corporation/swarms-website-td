@@ -1,0 +1,16 @@
+{
+  "name": "Swarms AI",
+  "short_name": "Swarms",
+  "description": "Multi-Agent AI Framework for Enterprise",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ef4444",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+} 

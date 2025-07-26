@@ -127,6 +127,9 @@ export function Navigation() {
           <NavLink href="https://docs.swarms.world" external>
             Docs
           </NavLink>
+          <NavLink href="/blog">
+            Blog
+          </NavLink>
           
           {/* Products Dropdown */}
           <div 
@@ -453,6 +456,13 @@ export function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Docs
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-sm font-medium hover:text-red-500 transition-all duration-300 hover:bg-red-500/10 p-3 rounded-md border border-transparent hover:border-red-500/30 hover:shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Blog
                 </Link>
                 <div className="space-y-3">
                   <div className="text-sm font-medium px-3 flex items-center">
