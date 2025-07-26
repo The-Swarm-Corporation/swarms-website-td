@@ -291,7 +291,7 @@ export default function Home() {
                 transition={{ delay: 1, duration: 0.8 }}
               >
               {[
-                { value: "30K+", label: "Github Stars" },
+                { value: "160k+", label: "Users" },
                 { value: "1.9Billion+", label: "Agents Deployed" },
                 { value: "99.9%", label: "Uptime" }
                 ].map((stat, index) => (
@@ -943,26 +943,6 @@ export default function Home() {
                     <span>VIEW DOCUMENTATION</span>
                   </a>
                 </Button>
-              </motion.div>
-
-              {/* Stats row */}
-              <motion.div
-                className="mt-16 grid grid-cols-3 gap-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                {[
-                  { value: "30K+", label: "Github Stars" },
-                  { value: "1.9Billion+", label: "Agents Deployed" },
-                  { value: "99.9%", label: "Uptime" }
-                ].map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl md:text-3xl font-black text-red-500 mb-2 font-orbitron">{stat.value}</div>
-                    <div className="text-sm text-gray-400 font-sans tracking-wider">{stat.label}</div>
-                  </div>
-                ))}
               </motion.div>
             </div>
           </motion.div>
