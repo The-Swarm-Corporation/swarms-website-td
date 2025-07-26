@@ -461,7 +461,7 @@ export default function KOLProgramPage() {
               { icon: <Globe className="w-5 h-5" />, label: "Marketplace", url: "https://swarms.world" },
               { icon: <Users className="w-5 h-5" />, label: "DAO", url: "https://dao.swarms.world" },
               { icon: <Target className="w-5 h-5" />, label: "Startup Page", url: "/programs/startups" },
-              { icon: <MessageSquare className="w-5 h-5" />, label: "Discord", url: "https://discord.gg/jM3Z6M9uMq" },
+              { icon: <MessageSquare className="w-5 h-5" />, label: "Discord", url: "https://discord.gg/EamjgSaEQf" },
               { icon: <MessageCircle className="w-5 h-5" />, label: "Telegram", url: "http://t.me/swarmsgroupchat" },
             ].map((link, index) => (
               <Button

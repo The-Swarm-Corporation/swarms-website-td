@@ -312,4 +312,4 @@ As multi-agent systems become more prevalent in enterprise applications, the imp
 
 ---
 
-*For more information about Swarms' communication protocols, visit our [documentation](https://docs.swarms.world) or join our [Discord community](https://discord.gg/jM3Z6M9uMq).* 
+*For more information about Swarms' communication protocols, visit our [documentation](https://docs.swarms.world) or join our [Discord community](https://discord.gg/EamjgSaEQf).* 

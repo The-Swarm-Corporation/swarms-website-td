@@ -644,4 +644,4 @@ Remember that enterprise deployments are iterative processes. Start with a solid
 
 ---
 
-*For more information about Swarms deployment, visit our [documentation](https://docs.swarms.world) or join our [Discord community](https://discord.gg/jM3Z6M9uMq).* 
+*For more information about Swarms deployment, visit our [documentation](https://docs.swarms.world) or join our [Discord community](https://discord.gg/EamjgSaEQf).* 

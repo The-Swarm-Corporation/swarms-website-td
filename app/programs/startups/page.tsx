@@ -137,7 +137,7 @@ export default function StartupsPage() {
                 icon: Users,
                 title: "Startup Community",
                 description: "Join a community of AI founders building with Swarms technology",
-                link: "https://discord.gg/jM3Z6M9uMq",
+                link: "https://discord.gg/EamjgSaEQf",
                 linkText: "Join Community",
               },
             ].map((feature, index) => {

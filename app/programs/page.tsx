@@ -382,7 +382,7 @@ export default function ProgramsPage() {
               {
                 title: "Community Forum",
                 description: "Join our community of researchers and developers",
-                link: "https://discord.gg/jM3Z6M9uMq",
+                link: "https://discord.gg/EamjgSaEQf",
               },
             ].map((resource, index) => (
               <Card

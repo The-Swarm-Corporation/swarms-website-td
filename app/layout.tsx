@@ -125,7 +125,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     "@type": "PostalAddress",
                     addressCountry: siteConfig.company.address.addressCountry,
                   },
-                  sameAs: [siteConfig.links.github, "https://twitter.com/swarms_corp", "https://discord.gg/jM3Z6M9uMq"],
+                  sameAs: [siteConfig.links.github, "https://twitter.com/swarms_corp", "https://discord.gg/EamjgSaEQf"],
                 },
                 {
                   "@type": "WebSite",

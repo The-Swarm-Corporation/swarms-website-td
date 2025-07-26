@@ -91,7 +91,7 @@ export default function BlogLayout({
               "sameAs": [
                 "https://github.com/kyegomez/swarms",
                 "https://twitter.com/swarms_corp",
-                "https://discord.gg/jM3Z6M9uMq"
+                "https://discord.gg/EamjgSaEQf"
               ]
             },
             "mainEntityOfPage": {

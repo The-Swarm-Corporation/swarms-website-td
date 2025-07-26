@@ -212,4 +212,4 @@ Whether you're building a simple automation workflow or a complex distributed AI
 
 ---
 
-*For more information, visit [swarms.ai](https://swarms.ai) or join our [Discord community](https://discord.gg/jM3Z6M9uMq).* 
+*For more information, visit [swarms.ai](https://swarms.ai) or join our [Discord community](https://discord.gg/EamjgSaEQf).* 

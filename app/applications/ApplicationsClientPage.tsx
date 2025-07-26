@@ -1305,7 +1305,7 @@ export default function ApplicationsClientPage() {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="https://discord.gg/jM3Z6M9uMq"
+                href="https://discord.gg/EamjgSaEQf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ position: "relative", zIndex: 10 }}

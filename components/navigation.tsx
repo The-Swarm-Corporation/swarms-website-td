@@ -347,7 +347,7 @@ export function Navigation() {
                           </TabsContent>
 
                           <TabsContent value="community" className="space-y-2 mt-2 relative">
-                            <FuturisticMenuItem icon={Discord} href="https://discord.gg/jM3Z6M9uMq">
+                            <FuturisticMenuItem icon={Discord} href="https://discord.gg/EamjgSaEQf">
                               Discord Community
                             </FuturisticMenuItem>
                             <FuturisticMenuItem icon={Twitter} href="https://x.com/swarms_corp">
@@ -413,7 +413,7 @@ export function Navigation() {
 
           {/* Social Links */}
           <SocialButton href="https://x.com/swarms_corp" icon={Twitter} label="Follow us on Twitter" />
-          <SocialButton href="https://discord.gg/jM3Z6M9uMq" icon={Discord} label="Join our Discord" />
+          <SocialButton href="https://discord.gg/EamjgSaEQf" icon={Discord} label="Join our Discord" />
 
           <Button
             variant="ghost"
@@ -648,7 +648,7 @@ export function Navigation() {
 
                     <TabsContent value="community" className="space-y-2 mt-0">
                       <Link
-                        href="https://discord.gg/jM3Z6M9uMq"
+                        href="https://discord.gg/EamjgSaEQf"
                         className="text-sm font-medium hover:text-red-500 transition-all duration-300 hover:bg-red-500/10 p-3 rounded-md flex items-center border border-transparent hover:border-red-500/30 hover:shadow-[0_0_8px_rgba(239,68,68,0.2)]"
                         onClick={() => setIsOpen(false)}
                       >
@@ -732,7 +732,7 @@ export function Navigation() {
                     </Button>
                     <Button variant="ghost" size="icon" asChild className="border border-transparent hover:border-red-500/40 hover:bg-red-500/10 transition-all duration-300 hover:shadow-[0_0_8px_rgba(239,68,68,0.3)]">
                       <a
-                        href="https://discord.gg/jM3Z6M9uMq"
+                        href="https://discord.gg/EamjgSaEQf"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Join our Discord"

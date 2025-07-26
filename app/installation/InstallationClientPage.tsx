@@ -489,7 +489,7 @@ export function InstallationClientPage() {
             <p className="text-gray-400 mb-4">Still having issues? Get help from our community</p>
             <div className="flex justify-center gap-4">
               <Button variant="outline" asChild>
-                <a href="https://discord.gg/jM3Z6M9uMq" target="_blank" rel="noopener noreferrer">
+                <a href="https://discord.gg/EamjgSaEQf" target="_blank" rel="noopener noreferrer">
                   Join Discord
                 </a>
               </Button>

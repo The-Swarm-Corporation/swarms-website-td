@@ -160,7 +160,7 @@ export function Footer() {
 
               <div className="grid gap-2">
                 {[
-                  { name: "Discord Community", icon: MessageCircle, url: "https://discord.gg/jM3Z6M9uMq" },
+                  { name: "Discord Community", icon: MessageCircle, url: "https://discord.gg/EamjgSaEQf" },
                   { name: "Telegram", icon: Send, url: "http://t.me/swarmsgroupchat" },
                   { name: "Events Calendar", icon: Calendar, url: "https://lu.ma/swarms_calendar" },
                   { name: "Book a Call", icon: Phone, url: "https://cal.com/swarms" },
