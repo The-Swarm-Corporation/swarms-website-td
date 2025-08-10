@@ -13,6 +13,7 @@ import { TypingEffect } from "@/components/typing-effect"
 import { AnimatedBackground } from "@/components/animated-background"
 import { Navigation } from "@/components/navigation"
 import { ScrollingTicker } from "@/components/scrolling-ticker"
+import { NewsletterSignupForm } from "@/components/newsletter-signup-form"
 
 export default function Home() {
   // Updated ticker announcements with the new messaging
@@ -1210,6 +1211,49 @@ export default function Home() {
               </Button>
             </motion.div>
           </motion.div>
+        </div>
+
+        {/* Newsletter Signup Section */}
+        <div className="relative overflow-hidden bg-black border-t-2 border-red-500/20">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-red-950/20 to-black" />
+          <AnimatedBackground particleColor="rgba(239, 68, 68, 0.3)" className="opacity-30" />
+          
+          <div className="container relative px-4 sm:px-6 py-24 md:py-32">
+            <motion.div
+              className="max-w-4xl mx-auto text-center space-y-8"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl md:text-6xl font-black text-white font-orbitron tracking-tighter mb-6">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600">
+                    STAY AHEAD OF THE CURVE
+                  </span>
+                </h2>
+                <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-sans">
+                  Sign up for our newsletter and get <span className="text-red-400 font-bold">$20 in free credits</span>, plus exclusive updates, technical guides, blogs, and more!
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <NewsletterSignupForm />
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </main>
 
