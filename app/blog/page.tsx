@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
@@ -10,10 +10,12 @@ import { CardWrapper } from "@/components/card-wrapper"
 import { 
   Calendar, Clock, ArrowRight, User, Tag, Eye,
   Search, Grid, List, ChevronLeft, ChevronRight,
-  SlidersHorizontal
+  SlidersHorizontal, BookOpen, Star, TrendingUp,
+  Filter, X
 } from "lucide-react"
 import { format, parseISO } from "date-fns"
 import type { BlogPost } from "@/lib/blog"
+import { cn } from "@/lib/utils"
 
 type ViewMode = 'gallery' | 'table'
 
@@ -26,6 +28,9 @@ export default function BlogPage() {
   const [postsPerPage, setPostsPerPage] = useState(12)
   const [currentPage, setCurrentPage] = useState(1)
   const [showFilters, setShowFilters] = useState(false)
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [sortBy, setSortBy] = useState<'date' | 'popular'>('date')
+  const [activeCategory, setActiveCategory] = useState<string>('all')
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -53,15 +58,33 @@ export default function BlogPage() {
   }, [])
 
   useEffect(() => {
-    const filtered = posts.filter(post => 
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-    )
-    setFilteredPosts(filtered)
+    const filtered = posts.filter(post => {
+      const matchesSearch = 
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+
+      const matchesTags = selectedTags.length === 0 || 
+        selectedTags.every(tag => post.tags.includes(tag))
+
+      const matchesCategory = activeCategory === 'all' || 
+        post.tags.includes(activeCategory)
+
+      return matchesSearch && matchesTags && matchesCategory
+    })
+
+    const sorted = [...filtered].sort((a, b) => {
+      if (sortBy === 'date') {
+        return new Date(b.date).getTime() - new Date(a.date).getTime()
+      }
+      // For demo purposes, using a random popularity score
+      return Math.random() - 0.5
+    })
+
+    setFilteredPosts(sorted)
     setCurrentPage(1)
-  }, [searchTerm, posts])
+  }, [searchTerm, posts, selectedTags, activeCategory, sortBy])
 
   const container = {
     hidden: { opacity: 0 },
@@ -108,12 +131,34 @@ export default function BlogPage() {
   const endIndex = startIndex + postsPerPage
   const currentPosts = filteredPosts.slice(startIndex, endIndex)
 
+  // Get all unique tags from posts
+  const allTags = Array.from(new Set(posts.flatMap(post => post.tags)))
+  const categories = ['all', 'AI', 'Technology', 'Tutorial', 'Research', 'Product']
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-black">
         <Navigation />
         <div className="flex items-center justify-center min-h-screen">
-          <div className="text-red-500 font-orbitron text-xl">LOADING BLOG...</div>
+          <div className="flex flex-col items-center gap-4">
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="text-red-500"
+            >
+              <BookOpen className="w-12 h-12" />
+            </motion.div>
+            <div className="text-red-500 font-orbitron text-xl tracking-wider">
+              LOADING INSIGHTS...
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -131,24 +176,64 @@ export default function BlogPage() {
 
         <div className="container relative px-4 sm:px-6 py-24 md:py-32">
           <motion.div
-            className="text-center"
+            className="text-center space-y-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-5xl md:text-7xl font-black text-white font-orbitron tracking-tighter mb-8">
+            <motion.h1 
+              className="text-5xl md:text-7xl font-black text-white font-orbitron tracking-tighter"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600">
-                SWARMS BLOG
+                SWARMS INSIGHTS
               </span>
-            </h1>
+            </motion.h1>
+            <motion.p
+              className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-sans"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              Explore the latest in AI technology, multi-agent systems, and the future of autonomous collaboration.
+            </motion.p>
           </motion.div>
         </div>
+      </div>
+
+      {/* Category Navigation */}
+      <div className="container px-4 sm:px-6 py-8 bg-black border-b border-red-500/20">
+        <motion.div
+          className="flex flex-wrap gap-4 justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant="outline"
+              size="sm"
+              onClick={() => setActiveCategory(category)}
+              className={cn(
+                "font-orbitron tracking-wider transition-all duration-300",
+                activeCategory === category
+                  ? "bg-red-500/20 border-red-500 text-red-400"
+                  : "border-red-500/30 text-gray-400 hover:bg-red-500/10 hover:border-red-500"
+              )}
+            >
+              {category.toUpperCase()}
+            </Button>
+          ))}
+        </motion.div>
       </div>
 
       {/* Controls Section */}
       <div className="container px-4 sm:px-6 py-8 bg-black">
         <motion.div
-          className="max-w-8xl mx-auto"
+          className="max-w-8xl mx-auto space-y-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -159,7 +244,7 @@ export default function BlogPage() {
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-red-500" />
               <input
                 type="text"
-                placeholder="Search articles..."
+                placeholder="Search insights..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 bg-black/50 border-2 border-red-500/30 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:outline-none font-orbitron tracking-wider backdrop-blur-sm"
@@ -168,6 +253,16 @@ export default function BlogPage() {
 
             {/* Controls */}
             <div className="flex items-center gap-4">
+              {/* Sort By */}
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as 'date' | 'popular')}
+                className="bg-black/50 border-2 border-red-500/30 rounded-lg text-white px-3 py-2 font-orbitron tracking-wider appearance-none cursor-pointer"
+              >
+                <option value="date">Latest</option>
+                <option value="popular">Popular</option>
+              </select>
+
               {/* View Toggle */}
               <div className="flex border border-red-500/30 rounded-lg overflow-hidden">
                 <Button
@@ -196,17 +291,6 @@ export default function BlogPage() {
                 </Button>
               </div>
 
-              {/* Posts Per Page */}
-              <select
-                value={postsPerPage}
-                onChange={(e) => setPostsPerPage(Number(e.target.value))}
-                className="bg-black/50 border-2 border-red-500/30 rounded-lg text-white px-3 py-2 font-orbitron tracking-wider appearance-none cursor-pointer"
-              >
-                <option value={8}>8 per page</option>
-                <option value={12}>12 per page</option>
-                <option value={24}>24 per page</option>
-              </select>
-
               {/* Filter Toggle */}
               <Button
                 variant="outline"
@@ -216,14 +300,65 @@ export default function BlogPage() {
                   showFilters ? 'bg-red-500/10' : ''
                 }`}
               >
-                <SlidersHorizontal className="h-4 w-4" />
+                {showFilters ? <X className="h-4 w-4" /> : <Filter className="h-4 w-4" />}
               </Button>
             </div>
           </div>
 
+          {/* Filter Panel */}
+          <AnimatePresence>
+            {showFilters && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="border-2 border-red-500/20 rounded-lg p-6 bg-black/50 backdrop-blur-sm">
+                  <h3 className="text-white font-orbitron mb-4">Filter by Tags</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {allTags.map((tag) => (
+                      <Button
+                        key={tag}
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          setSelectedTags(prev =>
+                            prev.includes(tag)
+                              ? prev.filter(t => t !== tag)
+                              : [...prev, tag]
+                          )
+                        }}
+                        className={cn(
+                          "font-orbitron tracking-wider",
+                          selectedTags.includes(tag)
+                            ? "bg-red-500/20 border-red-500 text-red-400"
+                            : "border-red-500/30 text-gray-400 hover:bg-red-500/10"
+                        )}
+                      >
+                        {tag}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           {/* Results Count */}
-          <div className="mt-4 text-gray-400 font-sans text-sm">
-            Showing {startIndex + 1}-{Math.min(endIndex, filteredPosts.length)} of {filteredPosts.length} articles
+          <div className="text-gray-400 font-sans text-sm flex items-center gap-2">
+            <span>Showing {startIndex + 1}-{Math.min(endIndex, filteredPosts.length)} of {filteredPosts.length} articles</span>
+            {selectedTags.length > 0 && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setSelectedTags([])}
+                className="text-red-400 hover:text-red-500"
+              >
+                Clear filters
+              </Button>
+            )}
           </div>
         </motion.div>
       </div>
@@ -243,11 +378,13 @@ export default function BlogPage() {
                   key={post.slug}
                   variants={item}
                   className={`group ${getRandomSize(index)}`}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <CardWrapper className="h-full transition-all duration-500 hover:translate-y-[-8px] hover:scale-[1.02]">
-                    <Card className="border-2 border-red-500/20 bg-black/50 backdrop-blur-sm h-full relative overflow-hidden">
+                  <CardWrapper className="h-full">
+                    <Card className="border-2 border-red-500/20 bg-black/50 backdrop-blur-sm h-full relative overflow-hidden group">
                       {/* Gradient Background */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${getRandomGradient()} opacity-30`} />
+                      <div className={`absolute inset-0 bg-gradient-to-br ${getRandomGradient()} opacity-30 transition-opacity duration-300 group-hover:opacity-40`} />
                       
                       {/* Animated border */}
                       <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -261,13 +398,21 @@ export default function BlogPage() {
                               {format(parseISO(post.date), "MMM dd, yyyy")}
                             </span>
                           </div>
+                          {post.featured && (
+                            <div className="flex items-center space-x-1 text-yellow-500">
+                              <Star className="h-4 w-4" />
+                              <span className="text-xs font-orbitron">FEATURED</span>
+                            </div>
+                          )}
                         </div>
 
                         <h2 className="text-2xl md:text-3xl text-white font-black mb-4 tracking-wider font-orbitron group-hover:text-red-400 transition-colors duration-300 flex-grow">
                           {post.title}
                         </h2>
 
-                        <div className="mt-auto">
+                        <div className="mt-auto space-y-4">
+                          <p className="text-gray-400 text-sm line-clamp-2">{post.description}</p>
+                          
                           <div className="flex flex-wrap gap-2 mb-6">
                             {post.tags.slice(0, 2).map((tag) => (
                               <span
@@ -277,6 +422,9 @@ export default function BlogPage() {
                                 {tag}
                               </span>
                             ))}
+                            {post.tags.length > 2 && (
+                              <span className="text-xs text-gray-500">+{post.tags.length - 2} more</span>
+                            )}
                           </div>
 
                           <div className="flex items-center justify-between">
@@ -320,9 +468,17 @@ export default function BlogPage() {
                 </thead>
                 <tbody>
                   {currentPosts.map((post) => (
-                    <tr key={post.slug} className="border-b border-red-500/10 hover:bg-red-500/5 transition-colors duration-200">
+                    <motion.tr
+                      key={post.slug}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="border-b border-red-500/10 hover:bg-red-500/5 transition-colors duration-200"
+                    >
                       <td className="px-6 py-4">
-                        <h3 className="text-white font-orbitron">{post.title}</h3>
+                        <div className="space-y-1">
+                          <h3 className="text-white font-orbitron">{post.title}</h3>
+                          <p className="text-gray-400 text-sm line-clamp-1">{post.description}</p>
+                        </div>
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center space-x-2">
@@ -346,6 +502,9 @@ export default function BlogPage() {
                               {tag}
                             </span>
                           ))}
+                          {post.tags.length > 2 && (
+                            <span className="text-xs text-gray-500">+{post.tags.length - 2}</span>
+                          )}
                         </div>
                       </td>
                       <td className="px-6 py-4 text-right">
@@ -361,7 +520,7 @@ export default function BlogPage() {
                           </a>
                         </Button>
                       </td>
-                    </tr>
+                    </motion.tr>
                   ))}
                 </tbody>
               </table>

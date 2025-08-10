@@ -233,14 +233,13 @@ const HiringClientPage = () => {
           </div>
  
           <button 
-            className="group relative w-full sm:w-auto bg-white text-black px-6 sm:px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-500 hover:scale-[1.02] overflow-hidden"
+            className="group relative w-full sm:w-auto bg-red-600 text-white px-6 sm:px-8 py-4 rounded-lg font-medium text-lg transition-all duration-500 hover:scale-[1.02] hover:bg-red-700"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             <a 
               href="https://cal.com/swarms/swarms-careers" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="relative flex items-center justify-center gap-3 group-hover:text-white transition-colors duration-500"
+              className="flex items-center justify-center gap-3"
             >
               Start Your Journey
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
@@ -398,6 +397,65 @@ const HiringClientPage = () => {
         </div>
       </section>
 
+      {/* Application Form Section */}
+      <section className="py-16 sm:py-32 px-4 bg-black">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 sm:mb-20">
+            <div className="inline-block px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-sm font-medium mb-4 sm:mb-6 hover:scale-105 hover:bg-green-500/15 transition-all duration-500 cursor-default">
+              Apply Now
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent px-4">
+              Start Your Application
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-400 font-light tracking-wide px-4">
+              Submit your application through our comprehensive form and take the first step towards joining our mission
+            </p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-green-950/5 to-black border border-green-500/20 rounded-2xl p-6 sm:p-12 backdrop-blur-sm hover:border-green-500/40 transition-all duration-500 mx-2 sm:mx-4">
+            <div className="text-center space-y-8">
+              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-xl">
+                <Mail className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                  Complete Application Form
+                </h3>
+                <p className="text-gray-300 text-lg leading-relaxed font-light tracking-wide mb-6">
+                  Fill out our detailed application form to showcase your skills, experience, and passion for AI research
+                </p>
+                <button className="group/btn relative bg-red-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-500 hover:scale-105 hover:bg-red-700">
+                  <a 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSd3f1c_WBVoBm5P_IHwxVFxeEFRy3RbiDslj91o5CTknsca5g/viewform?usp=sf_link" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center justify-center gap-3"
+                  >
+                    Submit Application
+                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-500" />
+                  </a>
+                </button>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <div className="flex items-center gap-3 text-gray-400">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="font-light tracking-wide">Comprehensive evaluation</span>
+                </div>
+                <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full" />
+                <div className="flex items-center gap-3 text-gray-400">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="font-light tracking-wide">Quick response time</span>
+                </div>
+                <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full" />
+                <div className="flex items-center gap-3 text-gray-400">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="font-light tracking-wide">Direct team review</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Positions Section */}
       <section className="py-32 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
@@ -487,18 +545,28 @@ const HiringClientPage = () => {
                   </div>
                 </div>
 
-                {/* Apply Button */}
-                <div className="relative flex justify-end">
-                  <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+                {/* Apply Buttons */}
+                <div className="relative flex flex-col sm:flex-row gap-3 justify-end">
+                  <button className="group/btn relative bg-red-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-500 hover:scale-105 hover:bg-red-700">
+                    <a 
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSd3f1c_WBVoBm5P_IHwxVFxeEFRy3RbiDslj91o5CTknsca5g/viewform?usp=sf_link" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center justify-center gap-3"
+                    >
+                      Apply Now
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-500" />
+                    </a>
+                  </button>
+                  <button className="group/btn relative border border-red-500/30 text-red-400 hover:bg-red-500/10 px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105">
                     <a 
                       href="https://cal.com/swarms/swarms-careers" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="relative flex items-center justify-center gap-3 group-hover/btn:text-white transition-colors duration-500"
+                      className="flex items-center justify-center gap-3"
                     >
-                      Apply Now
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-500" />
+                      Book Call
+                      <Phone className="w-4 h-4" />
                     </a>
                   </button>
                 </div>
@@ -536,13 +604,12 @@ const HiringClientPage = () => {
                   Schedule a deep dive into your background and research interests
                 </p>
               </div>
-              <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+              <button className="group/btn relative bg-red-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-500 hover:scale-105 hover:bg-red-700">
                 <a 
                   href="https://cal.com/swarms/swarms-careers" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="relative flex items-center gap-2 group-hover/btn:text-white transition-colors duration-500"
+                  className="flex items-center gap-2"
                 >
                   Book Call
                   <Phone className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-500" />
@@ -562,13 +629,12 @@ const HiringClientPage = () => {
                   Complete meaningful contributions to our framework
                 </p>
               </div>
-              <button className="group/btn relative bg-white text-black px-6 py-3 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+              <button className="group/btn relative bg-red-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-500 hover:scale-105 hover:bg-red-700">
                 <a 
                   href="https://github.com/kyegomez/swarms" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="relative flex items-center gap-2 group-hover/btn:text-white transition-colors duration-500"
+                  className="flex items-center gap-2"
                 >
                   Explore
                   <Code className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-500" />
@@ -615,25 +681,35 @@ const HiringClientPage = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent relative">
-              Ready to Make History?
+              Ready to Advance Humanity?
             </h2>
             <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light tracking-wide relative">
               Join us in building the infrastructure that will power the next generation of autonomous agents and multi-agent systems
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center relative">
-              <button className="group/btn relative bg-white text-black px-8 py-4 rounded-xl font-medium transition-all duration-500 hover:scale-105 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+              <button className="group/btn relative bg-red-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-500 hover:scale-105 hover:bg-red-700">
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSd3f1c_WBVoBm5P_IHwxVFxeEFRy3RbiDslj91o5CTknsca5g/viewform?usp=sf_link" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center gap-3"
+                >
+                  Submit Application
+                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-500" />
+                </a>
+              </button>
+              <button className="group/btn relative border border-red-500/30 text-red-300 hover:bg-red-500/10 px-8 py-4 rounded-lg font-medium transition-all duration-500 hover:scale-105">
                 <a 
                   href="https://cal.com/swarms/swarms-careers" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="relative flex items-center justify-center gap-3 group-hover/btn:text-white transition-colors duration-500"
+                  className="flex items-center justify-center gap-3"
                 >
-                  Begin Your Journey
-                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-500" />
+                  Book Call
+                  <Phone className="w-5 h-5" />
                 </a>
               </button>
-              <button className="group/btn relative border border-red-500/30 text-red-300 hover:bg-red-500/10 px-8 py-4 rounded-xl font-medium transition-all duration-500 hover:scale-105">
+              <button className="group/btn relative border border-red-500/30 text-red-300 hover:bg-red-500/10 px-8 py-4 rounded-lg font-medium transition-all duration-500 hover:scale-105">
                 <a 
                   href="https://docs.swarms.world" 
                   target="_blank" 

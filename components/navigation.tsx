@@ -3,8 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import {
-  MoonIcon,
-  SunIcon,
   Menu,
   ChevronDown,
   Twitter,
@@ -25,8 +23,9 @@ import {
   Package,
   Activity,
   Download,
+  Building,
+  MessageCircle,
 } from "lucide-react"
-import { useTheme } from "next-themes"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -35,7 +34,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 export function Navigation() {
-  const { setTheme, theme } = useTheme()
   const [isOpen, setIsOpen] = React.useState(false)
   const [activeTab, setActiveTab] = React.useState("ecosystem")
   
@@ -124,12 +122,6 @@ export function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex lg:space-x-4 xl:space-x-6">
-          <NavLink href="https://docs.swarms.world" external>
-            Docs
-          </NavLink>
-          <NavLink href="/blog">
-            Blog
-          </NavLink>
           
           {/* Products Dropdown */}
           <div 
@@ -374,6 +366,9 @@ export function Navigation() {
                             <FuturisticMenuItem icon={Users} href="https://contributors.swarms.world">
                               Contributors Portal
                             </FuturisticMenuItem>
+                            <FuturisticMenuItem icon={FileText} href="/blog">
+                              Blog
+                            </FuturisticMenuItem>
                           </TabsContent>
                         </motion.div>
                       </AnimatePresence>
@@ -386,23 +381,6 @@ export function Navigation() {
         </div>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button
-            variant="ghost"
-            className="hidden md:inline-flex hover:bg-red-500/10 hover:text-red-500 transition-all duration-300 border border-transparent hover:border-red-500/40 hover:shadow-[0_0_8px_rgba(239,68,68,0.3)]"
-            asChild
-          >
-            <a href="https://swarms.world" target="_blank" rel="noopener noreferrer">
-              Marketplace
-            </a>
-          </Button>
-
-          <Button
-            variant="ghost"
-            className="hidden md:inline-flex hover:bg-red-500/10 hover:text-red-500 transition-all duration-300 border border-transparent hover:border-red-500/40 hover:shadow-[0_0_8px_rgba(239,68,68,0.3)]"
-            asChild
-          >
-            <Link href="/hiring">Careers</Link>
-          </Button>
 
           <Button className="hidden md:inline-flex bg-red-600 hover:bg-red-700 neon-glow border-2 border-red-500/50 hover:border-red-400/70 transition-all duration-300 hover:shadow-[0_0_15px_rgba(239,68,68,0.5)]" asChild>
             <a href="https://github.com/kyegomez/swarms" target="_blank" rel="noopener noreferrer">
@@ -411,21 +389,78 @@ export function Navigation() {
             </a>
           </Button>
 
-          {/* Social Links */}
-          <SocialButton href="https://x.com/swarms_corp" icon={Twitter} label="Follow us on Twitter" />
-          <SocialButton href="https://discord.gg/EamjgSaEQf" icon={Discord} label="Join our Discord" />
-
           <Button
             variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="hidden md:inline-flex hover:bg-red-500/10 border border-transparent hover:border-red-500/40 transition-all duration-300 hover:shadow-[0_0_8px_rgba(239,68,68,0.3)]"
-            aria-label="Toggle theme"
+            className="hidden md:inline-flex hover:bg-red-500/10 hover:text-red-500 transition-all duration-300 border border-transparent hover:border-red-500/40 hover:shadow-[0_0_8px_rgba(239,68,68,0.3)]"
+            asChild
           >
-            <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
+            <a href="https://docs.swarms.world" target="_blank" rel="noopener noreferrer">
+              Docs
+            </a>
           </Button>
+
+          {/* Socials Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setHoveredDropdown("socials")}
+            onMouseLeave={() => setHoveredDropdown(null)}
+          >
+            <button className="flex items-center text-sm font-medium transition-all duration-300 hover:text-red-500 border border-transparent hover:border-red-500/30 px-3 py-1.5 rounded-md hover:bg-red-500/5">
+              Socials
+              <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${hoveredDropdown === "socials" ? "rotate-180" : ""}`} />
+            </button>
+            
+            <AnimatePresence>
+              {hoveredDropdown === "socials" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full right-0 mt-2 w-[200px] backdrop-blur-md bg-background/95 border-2 border-red-500/30 shadow-xl shadow-red-500/10 rounded-lg overflow-hidden z-50"
+                >
+                  <div className="p-2 space-y-1">
+                    <a
+                      href="https://x.com/swarms_corp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex cursor-pointer items-center border border-transparent hover:border-red-500/30 hover:bg-red-500/10 transition-all duration-300 p-2 rounded-md"
+                    >
+                      <Twitter className="mr-3 h-4 w-4 text-red-500" />
+                      Twitter/X
+                    </a>
+                    <a
+                      href="https://discord.gg/EamjgSaEQf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex cursor-pointer items-center border border-transparent hover:border-red-500/30 hover:bg-red-500/10 transition-all duration-300 p-2 rounded-md"
+                    >
+                      <Discord className="mr-3 h-4 w-4 text-red-500" />
+                      Discord
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/swarms-corp/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex cursor-pointer items-center border border-transparent hover:border-red-500/30 hover:bg-red-500/10 transition-all duration-300 p-2 rounded-md"
+                    >
+                      <Building className="mr-3 h-4 w-4 text-red-500" />
+                      LinkedIn
+                    </a>
+                    <a
+                      href="https://www.youtube.com/@kyegomez3242"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex cursor-pointer items-center border border-transparent hover:border-red-500/30 hover:bg-red-500/10 transition-all duration-300 p-2 rounded-md"
+                    >
+                      <MessageCircle className="mr-3 h-4 w-4 text-red-500" />
+                      YouTube
+                    </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>

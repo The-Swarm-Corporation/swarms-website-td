@@ -19,6 +19,7 @@ import {
   Phone,
   Cloud,
   Activity,
+  Building,
 } from "lucide-react"
 
 export function Footer() {
@@ -28,7 +29,7 @@ export function Footer() {
         {/* Glowing red line at the top */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-red-500 to-transparent" />
 
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 max-w-6xl">
           {/* Mission Statement Section */}
           <div className="mb-8 flex items-center gap-3">
             <img src="/logo.svg" alt="Swarms Logo" className="h-8 w-8" />
@@ -40,7 +41,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="relative grid grid-cols-1 gap-6 md:grid-cols-4">
+          <div className="relative grid grid-cols-1 gap-6 md:grid-cols-4 justify-items-center">
             {/* Products */}
             <div className="relative overflow-hidden rounded-md border border-red-900/20 bg-black p-4">
               <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-red-500">
@@ -78,56 +79,21 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Resources */}
+            {/* Resources & Programs */}
             <div className="relative overflow-hidden rounded-md border border-red-900/20 bg-black p-4">
               <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-red-500">
                 <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-                Resources
+                Resources & Programs
               </h3>
 
               <div className="grid gap-2">
                 {[
                   { name: "Documentation", icon: BookOpen, url: "https://docs.swarms.world" },
-                  { name: "Ecosystem Hub", icon: BookOpen, url: "https://ecosystem.swarms.world" },
-                  { name: "Cloud Platform", icon: Cloud, url: "https://cloud.swarms.ai" },
-                  { name: "Status Page", icon: Activity, url: "https://status.swarms.ai" },
-                  { name: "Swarms Course", icon: GraduationCap, url: "https://course.swarms.world" },
-                  { name: "Contributors Portal", icon: Users, url: "https://contributors.swarms.world" },
-                  { name: "Open Source", icon: Github, url: "/open-source" },
-                  { name: "Applications", icon: Sparkles, url: "/applications" },
-                ].map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.url}
-                    target={item.url.startsWith("http") ? "_blank" : undefined}
-                    rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group flex items-center justify-between rounded border border-transparent bg-transparent p-2 text-sm transition-all duration-300 hover:border-red-500/40 hover:bg-red-950/10 hover:shadow-sm"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/30 transition-colors duration-300 group-hover:bg-red-950/60">
-                        <item.icon className="h-3.5 w-3.5 text-red-500" />
-                      </div>
-                      <span className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-100">{item.name}</span>
-                    </div>
-                    <ArrowRight className="h-3 w-0 transform opacity-0 transition-all duration-300 group-hover:w-3 group-hover:translate-x-1 group-hover:opacity-100" />
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Programs */}
-            <div className="relative overflow-hidden rounded-md border border-red-900/20 bg-black p-4">
-              <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-red-500">
-                <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-                Programs
-              </h3>
-
-              <div className="grid gap-2">
-                {[
                   { name: "Research Program", icon: Award, url: "/programs" },
                   { name: "Startup Program", icon: Rocket, url: "https://www.swarms.ai/programs/startups" },
                   { name: "Grants Program", icon: DollarSign, url: "https://grants.swarms.world", isNew: true },
-                  { name: "Investors Portal", icon: DollarSign, url: "https://investors.swarms.world" },
+                  { name: "Ecosystem Hub", icon: BookOpen, url: "https://ecosystem.swarms.world" },
+                  { name: "Open Source", icon: Github, url: "/open-source" },
                 ].map((item, index) => (
                   <Link
                     key={index}
@@ -151,24 +117,20 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Community & Contact */}
+            {/* Community & Social */}
             <div className="relative overflow-hidden rounded-md border border-red-900/20 bg-black p-4">
               <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-red-500">
                 <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-                Community & Contact
+                Community & Social
               </h3>
 
               <div className="grid gap-2">
                 {[
                   { name: "Discord Community", icon: MessageCircle, url: "https://discord.gg/EamjgSaEQf" },
-                  { name: "Telegram", icon: Send, url: "http://t.me/swarmsgroupchat" },
-                  { name: "Events Calendar", icon: Calendar, url: "https://lu.ma/swarms_calendar" },
-                  { name: "Book a Call", icon: Phone, url: "https://cal.com/swarms" },
-                  { name: "Blog", icon: FileText, url: "https://medium.com/@kyeg" },
                   { name: "Swarms Twitter", icon: Twitter, url: "https://twitter.com/swarms_corp" },
-                  { name: "Swarms Foundation", icon: Twitter, url: "https://twitter.com/swarmsfndn" },
-                  { name: "Swarms Founder", icon: Twitter, url: "https://twitter.com/KyeGomezB" },
-                  { name: "Swarms News", icon: Twitter, url: "https://twitter.com/SwarmsStatus" },
+                  { name: "LinkedIn", icon: Building, url: "https://www.linkedin.com/company/swarms-corp/" },
+                  { name: "YouTube", icon: MessageCircle, url: "https://www.youtube.com/@kyegomez3242" },
+                  { name: "GitHub", icon: Github, url: "https://github.com/kyegomez/swarms" },
                 ].map((item, index) => (
                   <Link
                     key={index}
@@ -183,7 +145,39 @@ export function Footer() {
                       </div>
                       <span className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-100">{item.name}</span>
                     </div>
+                    <ArrowRight className="h-3 w-0 transform opacity-0 transition-all duration-300 group-hover:w-3 group-hover:translate-x-1 group-hover:opacity-100" />
+                  </Link>
+                ))}
+              </div>
+            </div>
 
+            {/* Support & Contact */}
+            <div className="relative overflow-hidden rounded-md border border-red-900/20 bg-black p-4">
+              <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-red-500">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                Support & Contact
+              </h3>
+
+              <div className="grid gap-2">
+                {[
+                  { name: "Book a Call", icon: Phone, url: "https://cal.com/swarms" },
+                  { name: "Careers", icon: Users, url: "/hiring" },
+                  { name: "Status Page", icon: Activity, url: "https://status.swarms.ai" },
+                  { name: "Email Support", icon: MessageCircle, url: "mailto:kye@swarms.world" },
+                ].map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.url}
+                    target={item.url.startsWith("http") ? "_blank" : undefined}
+                    rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="group flex items-center justify-between rounded border border-transparent bg-transparent p-2 text-sm transition-all duration-300 hover:border-red-500/40 hover:bg-red-950/10 hover:shadow-sm"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-6 w-6 items-center justify-center rounded bg-red-950/30 transition-colors duration-300 group-hover:bg-red-950/60">
+                        <item.icon className="h-3.5 w-3.5 text-red-500" />
+                      </div>
+                      <span className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-100">{item.name}</span>
+                    </div>
                     <ArrowRight className="h-3 w-0 transform opacity-0 transition-all duration-300 group-hover:w-3 group-hover:translate-x-1 group-hover:opacity-100" />
                   </Link>
                 ))}
