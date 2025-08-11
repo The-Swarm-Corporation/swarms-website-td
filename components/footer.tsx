@@ -20,6 +20,7 @@ import {
   Cloud,
   Activity,
   Building,
+  Network,
 } from "lucide-react"
 
 export function Footer() {
@@ -52,6 +53,7 @@ export function Footer() {
               <ul className="space-y-2">
                 {[
                   { name: "Products Overview", icon: Package, url: "/products" },
+                  { name: "Simulations", icon: Network, url: "/simulations" },
                   { name: "Swarms Python", icon: Github, url: "https://github.com/kyegomez/swarms" },
                   {
                     name: "Swarms API",

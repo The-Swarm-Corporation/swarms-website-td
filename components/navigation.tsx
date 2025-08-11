@@ -25,6 +25,7 @@ import {
   Download,
   Building,
   MessageCircle,
+  Network,
 } from "lucide-react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
@@ -147,6 +148,10 @@ export function Navigation() {
                     <Link href="/products" className="flex cursor-pointer items-center border border-transparent hover:border-red-500/30 hover:bg-red-500/10 transition-all duration-300 p-2 rounded-md">
                       <Package className="mr-3 h-4 w-4 text-red-500" />
                       Products Overview
+                    </Link>
+                    <Link href="/simulations" className="flex cursor-pointer items-center border border-transparent hover:border-red-500/30 hover:bg-red-500/10 transition-all duration-300 p-2 rounded-md">
+                      <Network className="mr-3 h-4 w-4 text-red-500" />
+                      Simulations
                     </Link>
                     <a
                       href="https://github.com/kyegomez/swarms"
@@ -511,6 +516,14 @@ export function Navigation() {
                   >
                     <Package className="mr-3 h-4 w-4 text-red-500" />
                     Products Overview
+                  </Link>
+                  <Link
+                    href="/simulations"
+                    className="text-sm font-medium hover:text-red-500 transition-all duration-300 hover:bg-red-500/10 p-3 rounded-md block flex items-center border border-transparent hover:border-red-500/30 hover:shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Network className="mr-3 h-4 w-4 text-red-500" />
+                    Simulations
                   </Link>
                   <Link
                     href="https://github.com/kyegomez/swarms"
