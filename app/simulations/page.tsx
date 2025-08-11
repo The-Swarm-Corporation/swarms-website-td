@@ -143,7 +143,7 @@ export default function SimulationsPage() {
           >
             <h2 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl text-white font-orbitron">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
-                WHAT WE'RE BUILDING
+                Simulating The World Economy
               </span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
@@ -254,7 +254,7 @@ export default function SimulationsPage() {
           >
             <h2 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl text-white font-orbitron">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
-                HOW WE'RE BUILDING IT
+                Building Simulation Infrastructure
               </span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
