@@ -131,7 +131,7 @@ export default function SimulationsPage() {
         </div>
 
         {/* What We're Building */}
-        <div className="container py-20 md:py-32 px-4 sm:px-6 bg-black relative">
+        <div className="container py-16 sm:py-20 md:py-32 px-4 sm:px-6 bg-black relative">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
           
           <motion.div
@@ -139,21 +139,21 @@ export default function SimulationsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center space-y-6 mb-16 md:mb-20 relative z-10"
+            className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 md:mb-20 relative z-10"
           >
-            <h2 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl text-white font-orbitron">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter md:text-5xl lg:text-6xl text-white font-orbitron">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
                 Simulating The World Economy
               </span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light font-sans">
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto" />
+            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-light font-sans px-4">
               Digital replicas of complex human organizations using coordinated agent systems
             </p>
           </motion.div>
 
           <motion.div
-            className="grid gap-8 md:grid-cols-3 relative z-10"
+            className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10"
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -190,13 +190,13 @@ export default function SimulationsPage() {
             ].map((domain, index) => {
               const Icon = domain.icon
               return (
-                <motion.div key={index} variants={item}>
-                  <CardWrapper className="h-full transition-all duration-500 hover:translate-y-[-12px] hover:scale-105 group">
-                    <Card className="border-2 border-red-500/20 bg-black/50 backdrop-blur-sm h-full relative overflow-hidden">
+                <motion.div key={index} variants={item} className="h-full">
+                  <CardWrapper className="h-full transition-all duration-500 hover:translate-y-[-8px] hover:scale-[1.02] group">
+                    <Card className="border-2 border-red-500/20 bg-black/50 backdrop-blur-sm h-full relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       
                       {/* Image Header */}
-                      <div className="relative h-48 overflow-hidden rounded-t-lg">
+                      <div className="relative h-40 sm:h-48 overflow-hidden rounded-t-lg flex-shrink-0">
                         <Image
                           src={domain.image}
                           alt={domain.imageAlt}
@@ -205,30 +205,78 @@ export default function SimulationsPage() {
                           className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
-                        <div className="absolute top-4 left-4">
-                          <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${domain.gradient} flex items-center justify-center shadow-lg shadow-red-500/25 group-hover:scale-110 transition-transform duration-300`}>
-                            <Icon className="h-6 w-6 text-white" />
+                        <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                          <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r ${domain.gradient} flex items-center justify-center shadow-lg shadow-red-500/25 group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                           </div>
                         </div>
                       </div>
                       
-                      <CardHeader className="relative z-10">
-                        <CardTitle className="text-2xl text-white font-bold mb-4 tracking-wider font-orbitron">
+                      <CardHeader className="relative z-10 flex-grow flex flex-col p-4 sm:p-6">
+                        <CardTitle className="text-lg sm:text-xl lg:text-2xl text-white font-bold mb-2 tracking-wider font-orbitron">
                           {domain.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-300 leading-relaxed font-sans mb-6">
+                        <CardDescription className="text-gray-300 leading-relaxed font-sans text-sm sm:text-base flex-grow mb-6">
                           {domain.description}
                         </CardDescription>
                         
-                        <div className="space-y-2 mb-4">
-                          {domain.capabilities.map((capability, capIndex) => (
-                            <div key={capIndex} className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0" />
-                              <span className="text-sm text-gray-400">{capability}</span>
-                            </div>
-                          ))}
+                        {/* Simulation Example Links - Always at bottom */}
+                        <div className="mt-auto pt-4">
+                          {index === 0 && ( // Autonomous Corporations
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="border-2 border-red-500/50 text-red-400 hover:bg-red-500/10 hover:border-red-500 hover:scale-105 transform transition-all duration-300 font-bold text-xs sm:text-sm px-4 py-2 font-orbitron w-full bg-black/50 backdrop-blur-sm"
+                              asChild
+                            >
+                              <a
+                                href="https://github.com/kyegomez/swarms"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center space-x-2"
+                              >
+                                <span>COMING SOON</span>
+                                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
+                              </a>
+                            </Button>
+                          )}
+                          
+                          {index === 2 && ( // Hospital simulation
+                            <Button
+                              size="sm"
+                              className="bg-red-600 hover:bg-red-700 hover:scale-105 transform transition-all duration-300 font-bold text-xs sm:text-sm px-4 py-2 border border-red-500 shadow-lg shadow-red-500/25 font-orbitron w-full"
+                              asChild
+                            >
+                              <a
+                                href="https://github.com/The-Swarm-Corporation/HospitalSim"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center space-x-2"
+                              >
+                                <span>GET STARTED</span>
+                                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
+                              </a>
+                            </Button>
+                          )}
+                          
+                          {index === 1 && ( // Senate simulation
+                            <Button
+                              size="sm"
+                              className="bg-red-600 hover:bg-red-700 hover:scale-105 transform transition-all duration-300 font-bold text-xs sm:text-sm px-4 py-2 border border-red-500 shadow-lg shadow-red-500/25 font-orbitron w-full"
+                              asChild
+                            >
+                              <a
+                                href="https://github.com/kyegomez/swarms/blob/master/examples/sims/simulation_vote_example.py"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center space-x-2"
+                              >
+                                <span>GET STARTED</span>
+                                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
+                              </a>
+                            </Button>
+                          )}
                         </div>
-                        
 
                       </CardHeader>
                       
