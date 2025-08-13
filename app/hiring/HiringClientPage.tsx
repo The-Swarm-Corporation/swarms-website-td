@@ -716,7 +716,7 @@ const HiringClientPage = () => {
                   rel="noopener noreferrer" 
                   className="flex items-center justify-center gap-3"
                 >
-                  Explore Research
+                  Learn more
                   <ExternalLink className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-500" />
                 </a>
               </button>

@@ -5,6 +5,7 @@ import { Terminal, ArrowRight, Zap } from "lucide-react"
 import { motion } from "framer-motion"
 import { AnimatedBackground } from "./animated-background"
 import { TypingEffect } from "./typing-effect"
+import Link from "next/link"
 
 export function Hero() {
   return (
@@ -47,17 +48,19 @@ export function Hero() {
                 stiffness: 100,
               }}
             >
-              <h1
-                id="hero-title"
-                className="text-6xl font-black tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl relative font-orbitron"
-              >
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse">
-                  swarms
-                </span>
-                <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse" style={{ animationDelay: "0.1s", filter: "blur(1px)" }}>
-                  swarms
-                </div>
-              </h1>
+              <Link href="/" className="cursor-pointer group">
+                <h1
+                  id="hero-title"
+                  className="text-6xl font-black tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl relative font-orbitron transition-all duration-300 group-hover:scale-105"
+                >
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse group-hover:from-red-400 group-hover:via-red-300 group-hover:to-red-500 transition-all duration-300">
+                    swarms
+                  </span>
+                  <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 animate-pulse group-hover:from-red-400 group-hover:via-red-300 group-hover:to-red-500 transition-all duration-300" style={{ animationDelay: "0.1s", filter: "blur(1px)" }}>
+                    swarms
+                  </div>
+                </h1>
+              </Link>
               <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent animate-pulse" />
             </motion.div>
 
@@ -81,14 +84,21 @@ export function Hero() {
               />
             </motion.div>
 
-            <motion.p
+            <motion.div
               className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light font-orbitron"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              The Enterprise-Grade Multi-Agent Infrastructure Stack
-            </motion.p>
+              <Link 
+                href="/products" 
+                className="cursor-pointer hover:text-red-400 transition-all duration-300 hover:scale-105 inline-block group"
+              >
+                <span className="group-hover:text-shadow-glow">
+                  The Enterprise-Grade Multi-Agent Infrastructure Stack
+                </span>
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div
