@@ -58,7 +58,7 @@ export function Footer() {
                   {
                     name: "Swarms API",
                     icon: Code,
-                    url: "https://doc.swarms.ai",
+                    url: "https://docs.swarms.ai",
                   },
                   { name: "Swarms RS", icon: Rocket, url: "https://github.com/The-Swarm-Corporation/swarms-rs" },
                   { name: "Swarms Marketplace", icon: Sparkles, url: "https://swarms.world" },

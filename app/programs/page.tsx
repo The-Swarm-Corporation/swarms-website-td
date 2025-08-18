@@ -357,7 +357,7 @@ export default function ProgramsPage() {
               {
                 title: "API Documentation",
                 description: "Comprehensive guides and references for the Swarms API",
-                link: "https://doc.swarms.ai",
+                link: "https://docs.swarms.ai",
               },
               {
                 title: "Cloud Dashboard",
