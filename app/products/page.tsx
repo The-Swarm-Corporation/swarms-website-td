@@ -583,7 +583,7 @@ async fn main() -> Result<()> {
                   icon={Server}
                   title="Swarms API"
                   description="Enterprise-grade Agent Swarm Management API for deploying and orchestrating sophisticated AI agent workflows in the cloud without managing infrastructure."
-                  docsUrl="https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/"
+                  docsUrl="https://doc.swarms.ai"
                   getStartedUrl="https://swarms.world/platform/api-keys"
                   badges={[
                     { text: "Cloud", variant: "secondary" },
@@ -695,7 +695,7 @@ print(response.json())`}
                       </ul>
                       <div className="mt-6">
                         <a
-                          href="https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/"
+                          href="https://doc.swarms.ai"
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ position: "relative", zIndex: 10 }}

@@ -163,7 +163,7 @@ export function Navigation() {
                       Swarms Python
                     </a>
                     <a
-                      href="https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/"
+                      href="https://doc.swarms.ai"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex cursor-pointer items-center border border-transparent hover:border-red-500/30 hover:bg-red-500/10 transition-all duration-300 p-2 rounded-md"
@@ -534,7 +534,7 @@ export function Navigation() {
                     Swarms Python
                   </Link>
                   <Link
-                    href="https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/"
+                    href="https://doc.swarms.ai"
                     className="text-sm font-medium hover:text-red-500 transition-all duration-300 hover:bg-red-500/10 p-3 rounded-md block flex items-center border border-transparent hover:border-red-500/30 hover:shadow-[0_0_8px_rgba(239,68,68,0.2)]"
                     onClick={() => setIsOpen(false)}
                   >

@@ -49,8 +49,8 @@ export function FeaturesGrid() {
       subtitle: "Ultra-Optimized Hosted Runtime",
       description: "Enterprise-grade hosted API with ultra-optimized runtime for deploying and scaling your agent swarms in production.",
       gradient: "from-red-700 to-red-800",
-      link: "https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/",
-      docsLink: "https://docs.swarms.world/en/latest/swarms_cloud/swarms_api/",
+      link: "https://doc.swarms.ai",
+      docsLink: "https://doc.swarms.ai",
       badge: "API"
     },
     {
